@@ -23,19 +23,27 @@ struct LoginView: View {
     private var content: some View {
         
         VStack(alignment: .leading, spacing: 0) {
+           
+            
             Text("Login")
             
             VStack(spacing: 8) {
-                EmailInput(email: $viewModel.email, 
+                EmailInput(email: $viewModel.email,
                            isFocused: _emailIsFocused)
                 PasswordInput(password: $viewModel.password,
                               isFocused: _isPasswordFocused)
             }
             
             forgotPassword
+            Spacer()
             
             bottomButtonSection
         }
+        .frame(maxWidth: .infinity,
+               maxHeight: .infinity)
+        .background(Colors.primaryBg.itm
+            .ignoresSafeArea(.all)
+        )
     }
     
     private var forgotPassword: some View {
@@ -56,7 +64,7 @@ struct LoginView: View {
                 viewModel.login()
             }, label: {
                 PrimaryButton(type: .fill,
-                              title: "Enter"~)
+                              title: "Login"~)
             })
     
             
@@ -70,4 +78,9 @@ struct LoginView: View {
             })
         })
     }
+}
+
+
+#Preview {
+    LoginView()
 }

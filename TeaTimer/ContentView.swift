@@ -9,16 +9,14 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            
-        }
-        .padding()
+        NavigationView(content: {
+             TimerListView()
+        })
     }
 }
 
-/*
+
  #Preview {
      ContentView()
  }
-
- */
+ 

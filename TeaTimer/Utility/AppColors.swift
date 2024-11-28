@@ -25,6 +25,7 @@ enum Colors: String {
     case brandTxt
     case errorTxt
     case inversionTxt
+    case primaryTxt
     case secondaryTxt
     case thirdText
     
