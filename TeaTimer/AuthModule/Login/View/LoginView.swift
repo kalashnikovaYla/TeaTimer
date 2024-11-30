@@ -5,6 +5,7 @@
 //  Created by Юлия Калашникова on 28.11.2024.
 //
 
+
 import Foundation
 import SwiftUI
 
@@ -14,27 +15,19 @@ struct LoginView: View {
     @FocusState private var isPasswordFocused: Bool
 
     @State var viewModel = LoginViewModel()
-    
+     
     var body: some View {
         content
     }
     
     //MARK: - Subviews
     private var content: some View {
-        
         VStack(alignment: .leading, spacing: 0) {
-           
             
-            Text("Login")
+            titleSection
             
-            VStack(spacing: 8) {
-                EmailInput(email: $viewModel.email,
-                           isFocused: _emailIsFocused)
-                PasswordInput(password: $viewModel.password,
-                              isFocused: _isPasswordFocused)
-            }
+            inputSection
             
-            forgotPassword
             Spacer()
             
             bottomButtonSection
@@ -44,6 +37,45 @@ struct LoginView: View {
         .background(Colors.primaryBg.itm
             .ignoresSafeArea(.all)
         )
+        .toolbar {
+            ToolbarItemGroup(placement: .navigationBarLeading) {
+                Text("Tea Timer")
+                    .font(.custom(Fonts.title.itm,
+                                  size: 20)
+                    )
+                    .foregroundColor(Colors.primaryTxt.itm)
+            }
+        }
+        .fullScreenCover(isPresented: $viewModel.isShowRegistrationView, content: {
+            NavigationView(content: {
+                RegistrationView()
+            })
+        })
+       
+       
+    }
+    
+    
+    private var inputSection: some View {
+        VStack(spacing: 8) {
+            
+            EmailInput(email: $viewModel.email,
+                       isFocused: _emailIsFocused)
+            PasswordInput(type: .enterPassword, 
+                          password: $viewModel.password,
+                          isFocused: _isPasswordFocused)
+            forgotPassword
+        }
+        .padding(.horizontal)
+        .padding(.top)
+    }
+    
+    private var titleSection: some View {
+        Text("Login")
+            .font(.custom(Fonts.title.itm,
+                          size: 34))
+            .foregroundStyle(Colors.primaryTxt.itm)
+            .padding(.horizontal)
     }
     
     private var forgotPassword: some View {
@@ -52,13 +84,16 @@ struct LoginView: View {
                 viewModel.forgotPasswordButtonWasTapped()
             }, label: {
                 Text("Forgot your password?")
+                    .foregroundStyle(Colors.primaryBtn.itm)
+                    .font(.custom(Fonts.primary.itm,
+                                  size: 20))
             })
         }
         .frame(maxWidth: .infinity, alignment: .trailing)
     }
     
     private var bottomButtonSection: some View {
-        VStack(alignment: .center, spacing: 8, content: {
+        VStack(alignment: .center, spacing: 16, content: {
             
             Button(action: {
                 viewModel.login()
@@ -67,20 +102,33 @@ struct LoginView: View {
                               title: "Login"~)
             })
     
-            
-            
+            registrSection
+        })
+    }
+    
+    private var registrSection: some View {
+        VStack(spacing: 0) {
             Text("Are you here for the first time?")
+                .font(.custom(Fonts.primary.itm,
+                              size: 17))
+                .foregroundStyle(Colors.secondaryTxt.itm)
             
             Button(action: {
                 viewModel.isShowRegistrationView = true
             }, label: {
                 Text("Registration")
+                    .font(.custom(Fonts.primary.itm,
+                                  size: 20))
+                    .foregroundStyle(Colors.primaryBtn.itm)
             })
-        })
+        }
     }
 }
 
+ 
+ 
+ #Preview {
+     LoginView()
+ }
 
-#Preview {
-    LoginView()
-}
+ 

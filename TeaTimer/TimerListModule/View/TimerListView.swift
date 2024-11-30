@@ -2,9 +2,10 @@
 //  TimerListView.swift
 //  TeaTimer
 //
-//  Created by Юлия Калашникова on 28.11.2024.
+//  Created by Юлия Калашникова on 30.11.2024.
 //
 
+import Foundation
 import SwiftUI
 
 struct TimerListView: View {
@@ -20,16 +21,14 @@ struct TimerListView: View {
     //MARK: - SubViews
     private var content: some View {
         VStack(spacing: 0, content: {
-            
             titleContainer
             list
-            
         })
         .background(Colors.primaryBg.itm)
         .toolbar {
             ToolbarItemGroup(placement: .navigationBarLeading) {
                 Text("Tea Timer")
-                    .font(.custom(Fonts.title.itm, 
+                    .font(.custom(Fonts.title.itm,
                                   size: 20)
                     )
                     .foregroundColor(Colors.primaryTxt.itm)
@@ -60,7 +59,7 @@ struct TimerListView: View {
                 .frame(maxWidth: .infinity, alignment: .leading)
             
             Button(action: {
-                viewModel.isShowCreateTimer = true 
+                viewModel.isShowCreateTimer = true
             }, label: {
                 plusButton
             })
@@ -120,6 +119,8 @@ struct TimerListView: View {
     }
 }
 
-#Preview(body: {
-    TimerListView()
-})
+ 
+ #Preview(body: {
+     TimerListView()
+ })
+ 

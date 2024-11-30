@@ -1,6 +1,12 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "3 мин" : {
+
+    },
+    "70-80°C" : {
+
+    },
     "Are you here for the first time?" : {
       "localizations" : {
         "ru" : {
@@ -42,7 +48,14 @@
       }
     },
     "Password" : {
-
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Пароль"
+          }
+        }
+      }
     },
     "Register" : {
       "extractionState" : "stale",
@@ -56,7 +69,24 @@
       }
     },
     "Registration" : {
-
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Зарегистрироваться"
+          }
+        }
+      }
+    },
+    "Repeat password" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Повторите пароль"
+          }
+        }
+      }
     },
     "Sign up and keep a history of your brews, mark your favorites, and write notes" : {
       "localizations" : {
@@ -84,6 +114,9 @@
           }
         }
       }
+    },
+    "Зелёный" : {
+
     },
     "Ок" : {
 

@@ -24,12 +24,12 @@ struct PrimaryButton: View {
     var body: some View {
         VStack {
             Text(title)
-                .font(Font.system(size: 16)
-                    .weight(.bold)
+                .font(.custom(Fonts.primary.itm,
+                              size: 20)
                 )
                 .foregroundColor(
                     type == .fill ?
-                    Colors.primaryBtn.itm: Colors.primaryBtn.itm
+                    Colors.inversionTxt.itm: Colors.primaryBtn.itm
                 )
         }
         .padding(.vertical, 16)
@@ -44,7 +44,7 @@ struct PrimaryButton: View {
                    )
         )
         .background(type == .fill ?
-                    Colors.primaryBtn.itm : Colors.primaryBtn.itm)
+                    Colors.primaryBtn.itm : Colors.primaryBg.itm)
         .cornerRadius(12)
         .padding(.horizontal)
     }

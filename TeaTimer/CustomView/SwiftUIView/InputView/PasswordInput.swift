@@ -8,20 +8,32 @@
 import Foundation
 import SwiftUI
 
+enum PasswordInputType {
+    case enterPassword
+    case repeatPassword
+}
+
+
 struct PasswordInput: View {
     
+    let type: PasswordInputType
     @Binding var password: String
     @FocusState var isFocused: Bool
     
     var body: some View {
         VStack(alignment: .leading, spacing: 0, content: {
+            
             HStack {
-                SecureField("Password", text: $password)
+                SecureField(type == .enterPassword ? "Password" : "Repeat password", 
+                            text: $password)
                     .focused($isFocused)
                     .padding()
-                    .background(Color.gray.opacity(0.2))
+                    .keyboardType(.numberPad)
+                    .font(.custom(Fonts.primary.itm,
+                                  size: 17))
+                    .foregroundStyle(Colors.secondaryTxt.itm)
                     .cornerRadius(5)
-                    .padding(.horizontal, 16)
+                     
                 
                 
                 VStack(alignment: .center) {

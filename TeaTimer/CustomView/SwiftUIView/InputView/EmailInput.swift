@@ -19,14 +19,17 @@ struct EmailInput: View {
         VStack(alignment: .leading, spacing: 0, content: {
             TextField("Enter your email", text: $email)
                 .focused($isFocused)
+                .font(.custom(Fonts.primary.itm,
+                              size: 17))
+                .foregroundStyle(Colors.secondaryTxt.itm)
                 .keyboardType(.emailAddress)
-                .textFieldStyle(.roundedBorder)
                 .padding()
                 .onSubmit {
                     // Действие при нажатии "return"
                 }
         })
         .frame(maxWidth: .infinity, minHeight: 48, maxHeight: 48)
+        .background(Colors.primaryBg.itm)
         .cornerRadius(8)
         .overlay(RoundedRectangle(cornerRadius: 8)
             .inset(by: 0.5)
@@ -35,3 +38,5 @@ struct EmailInput: View {
         )
     }
 }
+
+
