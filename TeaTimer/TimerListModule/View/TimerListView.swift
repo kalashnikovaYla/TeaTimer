@@ -47,6 +47,11 @@ struct TimerListView: View {
                 LoginView()
             })
         })
+        .fullScreenCover(isPresented: $viewModel.isShowProfileView, content: {
+            NavigationView(content: {
+                ProfileView()
+            })
+        })
     }
     
     private var titleContainer: some View {

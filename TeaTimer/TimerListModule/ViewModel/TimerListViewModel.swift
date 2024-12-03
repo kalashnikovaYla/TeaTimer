@@ -11,5 +11,6 @@ import Foundation
 final class TimerListViewModel: ObservableObject {
     
     @Published var isShowLoginView = false
+    @Published var isShowProfileView = false 
     @Published var isShowCreateTimer = false
 }
