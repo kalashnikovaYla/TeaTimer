@@ -51,17 +51,6 @@ struct ProfileView: View {
         .background(Colors.primaryBg.itm
             .ignoresSafeArea(.all)
         )
-        .toolbar {
-            ToolbarItemGroup(placement: .navigationBarLeading) {
-                Button(action: {
-                    
-                }, label: {
-                    Image("greenChevron-left")
-                        .resizable()
-                        .frame(width: 24, height: 24)
-                })
-            }
-        }
     }
     
     private var mailCell: some View {

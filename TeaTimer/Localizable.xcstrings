@@ -17,12 +17,44 @@
         }
       }
     },
+    "Delete" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Удалить"
+          }
+        }
+      }
+    },
+    "Edit" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Редактировать"
+          }
+        }
+      }
+    },
     "Enter your email" : {
       "localizations" : {
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Введите почту"
+          }
+        }
+      }
+    },
+    "Favorites" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Избранное"
           }
         }
       }
@@ -37,8 +69,15 @@
         }
       }
     },
-    "Hello, World!" : {
-
+    "Home" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "На главную"
+          }
+        }
+      }
     },
     "Login" : {
       "localizations" : {
@@ -59,6 +98,9 @@
           }
         }
       }
+    },
+    "Name@mail .ru" : {
+
     },
     "Password" : {
       "localizations" : {
@@ -111,11 +153,28 @@
         }
       }
     },
+    "Story" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "История"
+          }
+        }
+      }
+    },
     "Tea Timer" : {
 
     },
     "Timers" : {
-
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Таймеры"
+          }
+        }
+      }
     },
     "To register" : {
       "extractionState" : "manual",

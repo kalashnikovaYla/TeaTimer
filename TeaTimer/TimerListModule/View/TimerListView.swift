@@ -21,38 +21,13 @@ struct TimerListView: View {
     //MARK: - SubViews
     private var content: some View {
         VStack(spacing: 0, content: {
+            ToolBar(type: .withLogin)
             titleContainer
             list
         })
         .background(Colors.primaryBg.itm)
-        .toolbar {
-            ToolbarItemGroup(placement: .navigationBarLeading) {
-                Text("Tea Timer")
-                    .font(.custom(Fonts.title.itm,
-                                  size: 20)
-                    )
-                    .foregroundColor(Colors.primaryTxt.itm)
-            }
-            ToolbarItemGroup(placement: .navigationBarTrailing) {
-                Button(action: {
-                    viewModel.isShowLoginView = true
-                }) {
-                    Text("Login")
-                        .foregroundColor(Colors.primaryBtn.itm)
-                }
-            }
-        }
-        .fullScreenCover(isPresented: $viewModel.isShowLoginView, content: {
-            NavigationView(content: {
-                LoginView()
-            })
-        })
-        .fullScreenCover(isPresented: $viewModel.isShowProfileView, content: {
-            NavigationView(content: {
-                ProfileView()
-            })
-        })
     }
+   
     
     private var titleContainer: some View {
         HStack(alignment: .center, content: {

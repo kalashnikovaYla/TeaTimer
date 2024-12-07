@@ -15,7 +15,7 @@ struct LoginView: View {
     @FocusState private var isPasswordFocused: Bool
 
     @State var viewModel = LoginViewModel()
-     
+    @State var isShowRegistrationView = false
     var body: some View {
         content
     }
@@ -23,7 +23,7 @@ struct LoginView: View {
     //MARK: - Subviews
     private var content: some View {
         VStack(alignment: .leading, spacing: 0) {
-            
+            ToolBar(type: .withDissmiss)
             titleSection
             
             inputSection
@@ -37,24 +37,10 @@ struct LoginView: View {
         .background(Colors.primaryBg.itm
             .ignoresSafeArea(.all)
         )
-        .toolbar {
-            ToolbarItemGroup(placement: .navigationBarLeading) {
-                Text("Tea Timer")
-                    .font(.custom(Fonts.title.itm,
-                                  size: 20)
-                    )
-                    .foregroundColor(Colors.primaryTxt.itm)
-            }
-        }
-        .fullScreenCover(isPresented: $viewModel.isShowRegistrationView, content: {
-            NavigationView(content: {
-                RegistrationView()
-            })
+        .fullScreenCover(isPresented: $isShowRegistrationView, content: {
+            RegistrationView()
         })
-       
-       
     }
-    
     
     private var inputSection: some View {
         VStack(spacing: 8) {
@@ -114,7 +100,8 @@ struct LoginView: View {
                 .foregroundStyle(Colors.secondaryTxt.itm)
             
             Button(action: {
-                viewModel.isShowRegistrationView = true
+                print("7")
+                isShowRegistrationView.toggle()
             }, label: {
                 Text("Registration")
                     .font(.custom(Fonts.primary.itm,

@@ -24,6 +24,7 @@ struct RegistrationView: View {
     //MARK: - Subviews
     private var content: some View {
         VStack(alignment: .leading, spacing: 0) {
+            ToolBar(type: .withLogin)
             titleContainer
             inputContainer
             
@@ -40,15 +41,6 @@ struct RegistrationView: View {
         .background(Colors.primaryBg.itm
             .ignoresSafeArea(.all)
         )
-        .toolbar {
-            ToolbarItemGroup(placement: .navigationBarLeading) {
-                Text("Tea Timer")
-                    .font(.custom(Fonts.title.itm,
-                                  size: 20)
-                    )
-                    .foregroundColor(Colors.primaryTxt.itm)
-            }
-        }
     }
     
     private var titleContainer: some View {
