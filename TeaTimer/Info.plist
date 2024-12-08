@@ -5,6 +5,7 @@
 	<key>UIAppFonts</key>
 	<array>
 		<string>SourceSansPro-Regular.ttf</string>
+		<string>SourceSansPro-SemiBold.ttf</string>
 		<string>SourceSerif4-Regular.ttf</string>
 	</array>
 </dict>

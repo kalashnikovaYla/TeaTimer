@@ -13,11 +13,17 @@ enum StateTimerView {
     case timeIsUp
 }
 
+enum Direction {
+    case up
+    case down
+    
+}
+
 struct TimerView: View {
     
     @StateObject var viewModel = TimerViewModel()
     
-    @State var state: StateTimerView = .setTimer
+    @State var state: StateTimerView = .countdown
 
     @State var isShowDetailView = false
     
@@ -126,9 +132,90 @@ struct TimerView: View {
     
     
     private var countdownContainer: some View {
-        VStack {
+        VStack(spacing: 0, content: {
+            VStack(spacing: 50) {
+                directionButtonSection
+               
+            }
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
             
+            
+            countdownButtonSection
+        })
+    }
+    
+    private var directionButtonSection: some View {
+        HStack(spacing: 12) {
+            Button(action: {
+                
+            }, label: {
+                CustomButton(title: "– 10 sec",
+                             height: 58,
+                             color: Colors.primaryBg.itm,
+                             strokeColor: Colors.primaryBorder.itm,
+                             topLeftRadius: 20,
+                             topRightRadius: 12,
+                             bottomLeftRadius: 20,
+                             bottomRightRadius: 12)
+                .frame(width: 110)
+            })
+            
+            Button(action: {
+                
+            }, label: {
+                CustomButton(title: "+ 10 sec",
+                             height: 58,
+                             color: Colors.primaryBg.itm,
+                             strokeColor: Colors.primaryBorder.itm,
+                             topLeftRadius: 12,
+                             topRightRadius: 20,
+                             bottomLeftRadius: 12,
+                             bottomRightRadius: 20)
+               
+                .frame(width: 110)
+                
+            })
         }
+        .foregroundStyle(Colors.secondaryTxt.itm)
+        .font(.custom(Fonts.bold.itm,
+                      size: 20))
+    }
+    
+    
+    private var countdownButtonSection: some View {
+        HStack(spacing: 12, content: {
+            Button(action: {
+                
+            }, label: {
+                CustomButton(title: "Reset"~,
+                             height: 58,
+                             color: Colors.primaryBg.itm,
+                             strokeColor: Colors.primaryBorder.itm,
+                             topLeftRadius: 20,
+                             topRightRadius: 12,
+                             bottomLeftRadius: 20,
+                             bottomRightRadius: 12)
+                .foregroundStyle(Colors.secondaryTxt.itm)
+            })
+            
+            Button(action: {
+                
+            }, label: {
+                CustomButton(title: "Stop"~,
+                             height: 58, 
+                             color: Colors.primaryBtn.itm,
+                             strokeColor: Colors.primaryBorder.itm,
+                             topLeftRadius: 12,
+                             topRightRadius: 20,
+                             bottomLeftRadius: 12,
+                             bottomRightRadius: 20)
+                .foregroundStyle(Colors.inversionTxt.itm)
+            })
+        })
+        .font(.custom(Fonts.bold.itm,
+                      size: 20))
+        
+        .padding(.horizontal)
     }
 }
 

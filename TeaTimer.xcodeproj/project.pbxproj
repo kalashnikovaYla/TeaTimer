@@ -77,6 +77,7 @@
 		6BA3FF112CFCBEC400AB4B99 /* BottomSheetHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA3FF102CFCBEC400AB4B99 /* BottomSheetHeader.swift */; };
 		6BB1603D2CFB7F62000E8A96 /* TimerListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BB1603C2CFB7F62000E8A96 /* TimerListView.swift */; };
 		6BB160402CFB7FBF000E8A96 /* TimerListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BB1603F2CFB7FBF000E8A96 /* TimerListViewModel.swift */; };
+		6BE0F14E2D04A16D005AA7E3 /* SourceSansPro-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6BE0F14D2D04A16D005AA7E3 /* SourceSansPro-SemiBold.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -141,6 +142,7 @@
 		6BA3FF102CFCBEC400AB4B99 /* BottomSheetHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetHeader.swift; sourceTree = "<group>"; };
 		6BB1603C2CFB7F62000E8A96 /* TimerListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerListView.swift; sourceTree = "<group>"; };
 		6BB1603F2CFB7FBF000E8A96 /* TimerListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerListViewModel.swift; sourceTree = "<group>"; };
+		6BE0F14D2D04A16D005AA7E3 /* SourceSansPro-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-SemiBold.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -457,6 +459,7 @@
 				6B9C04272CF8380600777DE7 /* TeaTimerApp.swift */,
 				6B9C04292CF8380600777DE7 /* ContentView.swift */,
 				6B3CAFED2CF8F3A30063B386 /* SourceSansPro-Regular.ttf */,
+				6BE0F14D2D04A16D005AA7E3 /* SourceSansPro-SemiBold.ttf */,
 				6B3CAFF12CF8F3BE0063B386 /* SourceSerif4-Regular.ttf */,
 				6B3CAFE82CF8EFD70063B386 /* Info.plist */,
 				6B9C042B2CF8380800777DE7 /* Assets.xcassets */,
@@ -708,6 +711,7 @@
 				6B10A5A32CF87E2F00F15346 /* Localizable.xcstrings in Resources */,
 				6B9C042C2CF8380800777DE7 /* Assets.xcassets in Resources */,
 				6B3CAFF22CF8F3BE0063B386 /* SourceSerif4-Regular.ttf in Resources */,
+				6BE0F14E2D04A16D005AA7E3 /* SourceSansPro-SemiBold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

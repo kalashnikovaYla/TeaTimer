@@ -12,6 +12,7 @@ enum Fonts {
     
     case title
     case primary
+    case bold
     
     var itm: String {
         switch self {
@@ -19,6 +20,8 @@ enum Fonts {
             return "SourceSerif4-Regular"
         case .primary:
             return "SourceSansPro-Regular"
+        case .bold:
+            return "SourceSansPro-SemiBold"
         }
     }
 }

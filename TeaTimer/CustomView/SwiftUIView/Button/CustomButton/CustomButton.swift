@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 
 ///Кнопка с разными cornerRadius + stroke
-struct CustomRadiusButtonWithStroke: View {
+struct CustomButton: View {
     
     let title: String
     var height: CGFloat?

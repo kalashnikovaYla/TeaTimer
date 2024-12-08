@@ -143,12 +143,34 @@
         }
       }
     },
+    "Reset" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Сброс"
+          }
+        }
+      }
+    },
     "Sign up and keep a history of your brews, mark your favorites, and write notes" : {
       "localizations" : {
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Зарегистрируйтесь и сохраняйте историю своих заварок, отмечайте лучшие и пишите заметки"
+          }
+        }
+      }
+    },
+    "Stop" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Стоп"
           }
         }
       }
