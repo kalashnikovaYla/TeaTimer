@@ -34,7 +34,7 @@ struct PrimaryButton: View {
         }
         .padding(.vertical, 16)
         .frame(maxWidth: .infinity, alignment: .center)
-        .overlay(RoundedRectangle(cornerRadius: 12)
+        .overlay(RoundedRectangle(cornerRadius: 20)
             .inset(by:
                     type == .fill ? 0.0 : 0.5
                   )

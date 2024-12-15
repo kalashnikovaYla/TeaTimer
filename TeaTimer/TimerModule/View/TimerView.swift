@@ -23,8 +23,8 @@ struct TimerView: View {
     
     @StateObject var viewModel = TimerViewModel()
     
-    @State var state: StateTimerView = .countdown
-
+    @State var state: StateTimerView = .timeIsUp
+    @State var isShowNoteView = false
     @State var isShowDetailView = false
     
     var body: some View {
@@ -133,14 +133,23 @@ struct TimerView: View {
     
     private var countdownContainer: some View {
         VStack(spacing: 0, content: {
-            VStack(spacing: 50) {
+            VStack(spacing: 30) {
+                CircularTimer()
+                    
                 directionButtonSection
-               
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             
             
-            countdownButtonSection
+            if state == .countdown {
+                countdownButtonSection
+            } else {
+                Button(action: {
+                    isShowNoteView = true
+                }, label: {
+                    HistoryCell()
+                })
+            }
         })
     }
     

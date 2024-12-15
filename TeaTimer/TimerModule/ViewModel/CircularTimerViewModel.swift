@@ -27,7 +27,7 @@ final class CircularTimerViewModel: NSObject, ObservableObject {
         withAnimation(.easeInOut(duration: 0.25)) {
             isStarted = true
         }
-        timerStringValue = "\(hour == 0 ? "" : "\(hour):\(minute):\(seconds)")"
+        timerStringValue = "\(hour == 0 ? "" : "\(hour):\(minute)")"
         
         totalSeconds = (hour * 3600) + (minute * 60) + seconds
         staticTotalSeconds = totalSeconds
@@ -54,7 +54,7 @@ final class CircularTimerViewModel: NSObject, ObservableObject {
         hour = totalSeconds / 3600
         minute = (totalSeconds/60)%60
         seconds = totalSeconds % 60
-        timerStringValue = "\(hour):\(minute):\(seconds)"
+        timerStringValue = "\(hour):\(minute)"
         
         if hour == 0 && minute == 0 && seconds == 0 {
             isStarted = false

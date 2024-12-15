@@ -39,22 +39,30 @@ struct CircularTimer: View {
                                 .rotationEffect(.init(degrees: vm.progress * 360))
                         })
                         
-                        Text(vm.timerStringValue)
-                            .rotationEffect(.init(degrees: 90))
-                            .animation(.none, value: vm.progress)
+                        ZStack {
+                            Circle()
+                                .fill(Colors.brandBg.itm)
+                                .frame(width: 179, height: 179)
+                            
+                            Text(vm.timerStringValue)
+                                .font(.custom(Fonts.bold.itm,
+                                              size: 50))
+                                .foregroundStyle(Colors.brandTxt.itm)
+                                .rotationEffect(.init(degrees: 90))
+                                .animation(.none, value: vm.progress)
+                            
+                        }
+                       
                             
                     }
-                    .padding(60)
+                    .padding()
                     .frame(height: proxy.size.width)
                     .rotationEffect(.init(degrees: -90))
                     .animation(.easeInOut, value: vm.progress)
                 })
             })
-            .frame(maxWidth: .infinity,
-                   maxHeight: .infinity,
-                   alignment: .center)
         })
-        .padding(.horizontal)
+         
         .onTapGesture {
             vm.minute = 3
             vm.startTimer()
@@ -64,6 +72,7 @@ struct CircularTimer: View {
                 vm.updateTimer()
             }
         })
+        .frame(maxWidth: 258, maxHeight: 258)
     }
     
 }
