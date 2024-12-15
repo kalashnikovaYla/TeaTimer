@@ -63,6 +63,8 @@
 		6B54E8352CF88D8E008BC4C4 /* LocalizeOperator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B54E8342CF88D8E008BC4C4 /* LocalizeOperator.swift */; };
 		6B54E8382CF890DD008BC4C4 /* EmailInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B54E8372CF890DD008BC4C4 /* EmailInput.swift */; };
 		6B54E83C2CF891ED008BC4C4 /* PasswordInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B54E83B2CF891ED008BC4C4 /* PasswordInput.swift */; };
+		6B893C0D2D05E48F00C51778 /* CircularTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B893C0C2D05E48F00C51778 /* CircularTimer.swift */; };
+		6B893C0F2D05E99300C51778 /* CircularTimerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B893C0E2D05E99300C51778 /* CircularTimerViewModel.swift */; };
 		6B9C04282CF8380600777DE7 /* TeaTimerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B9C04272CF8380600777DE7 /* TeaTimerApp.swift */; };
 		6B9C042A2CF8380600777DE7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B9C04292CF8380600777DE7 /* ContentView.swift */; };
 		6B9C042C2CF8380800777DE7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6B9C042B2CF8380800777DE7 /* Assets.xcassets */; };
@@ -125,6 +127,8 @@
 		6B54E8342CF88D8E008BC4C4 /* LocalizeOperator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizeOperator.swift; sourceTree = "<group>"; };
 		6B54E8372CF890DD008BC4C4 /* EmailInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailInput.swift; sourceTree = "<group>"; };
 		6B54E83B2CF891ED008BC4C4 /* PasswordInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordInput.swift; sourceTree = "<group>"; };
+		6B893C0C2D05E48F00C51778 /* CircularTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularTimer.swift; sourceTree = "<group>"; };
+		6B893C0E2D05E99300C51778 /* CircularTimerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularTimerViewModel.swift; sourceTree = "<group>"; };
 		6B9C04242CF8380600777DE7 /* TeaTimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TeaTimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B9C04272CF8380600777DE7 /* TeaTimerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeaTimerApp.swift; sourceTree = "<group>"; };
 		6B9C04292CF8380600777DE7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -515,6 +519,7 @@
 			isa = PBXGroup;
 			children = (
 				6BA3FF0B2CFCB4DE00AB4B99 /* TimerView.swift */,
+				6B893C0C2D05E48F00C51778 /* CircularTimer.swift */,
 				6B199B7E2D04562300BB56D7 /* TimerToolBar.swift */,
 			);
 			path = View;
@@ -524,6 +529,7 @@
 			isa = PBXGroup;
 			children = (
 				6BA3FF0D2CFCB4F500AB4B99 /* TimerViewModel.swift */,
+				6B893C0E2D05E99300C51778 /* CircularTimerViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -748,6 +754,7 @@
 				6B1C39302CFF62E400B006AE /* ProfileView.swift in Sources */,
 				6B10A5622CF86FC200F15346 /* LoadView.swift in Sources */,
 				6B10A5932CF87A3600F15346 /* RegistrationView.swift in Sources */,
+				6B893C0D2D05E48F00C51778 /* CircularTimer.swift in Sources */,
 				6B10A57A2CF8757900F15346 /* RoundedCorner.swift in Sources */,
 				6B10A59B2CF87ADD00F15346 /* LoginModel.swift in Sources */,
 				6B199B7D2D0446B500BB56D7 /* Characteristics.swift in Sources */,
@@ -755,6 +762,7 @@
 				6BA3FF0C2CFCB4DE00AB4B99 /* TimerView.swift in Sources */,
 				6B10A5512CF8646600F15346 /* AppColors.swift in Sources */,
 				6B54E8352CF88D8E008BC4C4 /* LocalizeOperator.swift in Sources */,
+				6B893C0F2D05E99300C51778 /* CircularTimerViewModel.swift in Sources */,
 				6B10A55D2CF86F3700F15346 /* CommonAlert.swift in Sources */,
 				6B199B772D0428D300BB56D7 /* ToolBar.swift in Sources */,
 				6B10A56B2CF8737500F15346 /* TextView.swift in Sources */,
