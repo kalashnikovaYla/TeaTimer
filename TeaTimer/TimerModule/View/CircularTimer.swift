@@ -10,23 +10,25 @@ import SwiftUI
 struct CircularTimer: View {
     
     @StateObject var vm = CircularTimerViewModel()
+    
+    
     var body: some View {
         VStack(spacing: 0, content: {
             
             GeometryReader(content: { proxy in
                 VStack(spacing: 15, content: {
                     
-                    //MARK: Timer ring
                     ZStack {
                         Circle()
                             .stroke(Colors.primaryBorder.itm,
                                     lineWidth: 2)
                          
+                        //progress line
                         Circle()
                             .trim(from: 0, to: vm.progress)
                             .stroke(Colors.brandBg.itm,
                                     lineWidth: 2)
-                            
+                            .rotationEffect(.init(degrees: -vm.progress * 360))
                         
                         GeometryReader(content: { proxy in
                             let size = proxy.size
@@ -34,9 +36,11 @@ struct CircularTimer: View {
                             Circle()
                                 .fill(Colors.brandBorder.itm)
                                 .frame(width: 12, height: 12)
-                                .frame(width: size.width, height: size.width, alignment: .center)
+                                .frame(width: size.width, 
+                                       height: size.width,
+                                       alignment: .center)
                                 .offset(x: size.height/2)
-                                .rotationEffect(.init(degrees: vm.progress * 360))
+                                .rotationEffect(.init(degrees: -vm.progress * 360))
                         })
                         
                         ZStack {

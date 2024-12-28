@@ -37,6 +37,9 @@
         }
       }
     },
+    "Description" : {
+
+    },
     "Edit" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -211,6 +214,9 @@
         }
       }
     },
+    "Tea name" : {
+
+    },
     "Tea Timer" : {
 
     },
@@ -234,6 +240,9 @@
           }
         }
       }
+    },
+    "Water temperature" : {
+
     },
     "Your comment" : {
 

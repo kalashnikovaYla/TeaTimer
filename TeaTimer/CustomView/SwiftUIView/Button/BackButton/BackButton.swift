@@ -9,12 +9,18 @@ import Foundation
 import SwiftUI
 
 struct BackButton: View {
+   
+    @Environment(\.presentationMode) var presentationMode
     
     var body: some View {
-        VStack(alignment: .center, content: {
-            Image("greenChevron-left")
-                .resizable()
-                .frame(width: 24, height: 24)
+        Button(action: {
+            presentationMode.wrappedValue.dismiss()
+        }, label: {
+            VStack(alignment: .center, content: {
+                Image("greenChevron-left")
+                    .resizable()
+                    .frame(width: 24, height: 24)
+            })
         })
     }
 }
