@@ -17,14 +17,15 @@ enum ToolBarType {
     case withDissmiss
 }
 
+protocol ToolBarDelegate {
+    func buttonWasTapped(type: ToolBarType)
+}
 
-struct ToolBar: View{
+struct ToolBar: View {
     
-    @State var isShowLoginView = false
-    @State var isShowRegView = false
-    @State var isShowProfileView = false
     @Environment(\.presentationMode) var presentationMode
     
+    var delegate: ToolBarDelegate?
     let type: ToolBarType
     
     var body: some View {
@@ -44,19 +45,19 @@ struct ToolBar: View{
                 
                 case .withLogin:
                     Button {
-                        isShowLoginView = true
+                        delegate?.buttonWasTapped(type: .withLogin)
                     } label: {
                         Text("Login")
                     }
                 case .withRegister:
                     Button(action: {
-                        
+                        delegate?.buttonWasTapped(type: .withRegister)
                     }, label: {
                         Text("To register")
                     })
                 case .withProfile:
                     Button {
-                        isShowProfileView = true
+                        delegate?.buttonWasTapped(type: .withProfile)
                     } label: {
                         Text("My profile")
                     }
@@ -74,14 +75,5 @@ struct ToolBar: View{
                           size: 20))
         }
         .padding(.horizontal)
-        .fullScreenCover(isPresented: $isShowLoginView, content: {
-            LoginView()
-        })
-        .fullScreenCover(isPresented: $isShowRegView, content: {
-            RegistrationView()
-        })
-        .fullScreenCover(isPresented: $isShowProfileView, content: {
-            ProfileView()
-        })
     }
 }

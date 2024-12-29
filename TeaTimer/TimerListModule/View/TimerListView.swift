@@ -14,6 +14,9 @@ struct TimerListView: View {
     
    
     @State var isShowCreateTimer = false
+    @State var isShowLoginView = false
+    @State var isShowRegView = false
+    @State var isShowProfileView = false
     
     var body: some View {
         content
@@ -23,13 +26,22 @@ struct TimerListView: View {
     //MARK: - SubViews
     private var content: some View {
         VStack(spacing: 0, content: {
-            ToolBar(type: .withLogin)
+            ToolBar(delegate: self, type: .withLogin)
             titleContainer
             list
         })
         .background(Colors.primaryBg.itm)
         .fullScreenCover(isPresented: $isShowCreateTimer, content: {
             TimerView()
+        })
+        .fullScreenCover(isPresented: $isShowLoginView, content: {
+            LoginView(viewModel: LoginViewModel(authManager: viewModel.authManager))
+        })
+        .fullScreenCover(isPresented: $isShowRegView, content: {
+            RegistrationView(viewModel: RegistrationViewModel(authManager: viewModel.authManager))
+        })
+        .fullScreenCover(isPresented: $isShowProfileView, content: {
+            ProfileView()
         })
     }
    
@@ -109,7 +121,24 @@ struct TimerListView: View {
     }
 }
 
- 
+
+//MARK: - ToolBarDelegate
+extension TimerListView: ToolBarDelegate {
+    func buttonWasTapped(type: ToolBarType) {
+        switch type {
+        case .simple, .withDissmiss:
+            break
+        case .withLogin:
+            isShowLoginView = true
+        case .withRegister:
+            isShowRegView = true
+        case .withProfile:
+            isShowProfileView = true
+        }
+    }
+}
+
+
  #Preview(body: {
      TimerListView()
  })

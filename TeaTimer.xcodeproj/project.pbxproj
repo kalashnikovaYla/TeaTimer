@@ -34,17 +34,6 @@
 		6B10A57F2CF8781E00F15346 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B10A57E2CF8781E00F15346 /* CustomButton.swift */; };
 		6B10A5802CF8781E00F15346 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B10A57E2CF8781E00F15346 /* CustomButton.swift */; };
 		6B10A5812CF8781E00F15346 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B10A57E2CF8781E00F15346 /* CustomButton.swift */; };
-		6B10A58F2CF879C900F15346 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B10A58E2CF879C900F15346 /* LoginView.swift */; };
-		6B10A5932CF87A3600F15346 /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B10A5922CF87A3600F15346 /* RegistrationView.swift */; };
-		6B10A5972CF87A6100F15346 /* RegistrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B10A5962CF87A6100F15346 /* RegistrationViewModel.swift */; };
-		6B10A5982CF87A6100F15346 /* RegistrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B10A5962CF87A6100F15346 /* RegistrationViewModel.swift */; };
-		6B10A5992CF87A6100F15346 /* RegistrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B10A5962CF87A6100F15346 /* RegistrationViewModel.swift */; };
-		6B10A59B2CF87ADD00F15346 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B10A59A2CF87ADD00F15346 /* LoginModel.swift */; };
-		6B10A59C2CF87ADD00F15346 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B10A59A2CF87ADD00F15346 /* LoginModel.swift */; };
-		6B10A59D2CF87ADD00F15346 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B10A59A2CF87ADD00F15346 /* LoginModel.swift */; };
-		6B10A59F2CF87B2C00F15346 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B10A59E2CF87B2C00F15346 /* LoginViewModel.swift */; };
-		6B10A5A02CF87B2C00F15346 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B10A59E2CF87B2C00F15346 /* LoginViewModel.swift */; };
-		6B10A5A12CF87B2C00F15346 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B10A59E2CF87B2C00F15346 /* LoginViewModel.swift */; };
 		6B10A5A32CF87E2F00F15346 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 6B10A5A22CF87E2F00F15346 /* Localizable.xcstrings */; };
 		6B10A5A42CF87E2F00F15346 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 6B10A5A22CF87E2F00F15346 /* Localizable.xcstrings */; };
 		6B10A5A52CF87E2F00F15346 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 6B10A5A22CF87E2F00F15346 /* Localizable.xcstrings */; };
@@ -66,7 +55,6 @@
 		6B893C0D2D05E48F00C51778 /* CircularTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B893C0C2D05E48F00C51778 /* CircularTimer.swift */; };
 		6B893C0F2D05E99300C51778 /* CircularTimerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B893C0E2D05E99300C51778 /* CircularTimerViewModel.swift */; };
 		6B9C04282CF8380600777DE7 /* TeaTimerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B9C04272CF8380600777DE7 /* TeaTimerApp.swift */; };
-		6B9C042A2CF8380600777DE7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B9C04292CF8380600777DE7 /* ContentView.swift */; };
 		6B9C042C2CF8380800777DE7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6B9C042B2CF8380800777DE7 /* Assets.xcassets */; };
 		6B9C042F2CF8380800777DE7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6B9C042E2CF8380800777DE7 /* Preview Assets.xcassets */; };
 		6B9C04392CF8380800777DE7 /* TeaTimerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B9C04382CF8380800777DE7 /* TeaTimerTests.swift */; };
@@ -84,6 +72,19 @@
 		6BC3ED852D0F13DE00C7EC91 /* NoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BC3ED842D0F13DE00C7EC91 /* NoteView.swift */; };
 		6BC3ED872D0F173100C7EC91 /* InfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BC3ED862D0F173100C7EC91 /* InfoCell.swift */; };
 		6BC3ED892D0F184300C7EC91 /* NoteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BC3ED882D0F184300C7EC91 /* NoteViewModel.swift */; };
+		6BCB5F772D21B802003C3D00 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6BCB5F762D21B802003C3D00 /* GoogleService-Info.plist */; };
+		6BCB5F7A2D21B93D003C3D00 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 6BCB5F792D21B93D003C3D00 /* FirebaseAnalytics */; };
+		6BCB5F7C2D21B93D003C3D00 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 6BCB5F7B2D21B93D003C3D00 /* FirebaseAuth */; };
+		6BCB5F7E2D21B93D003C3D00 /* FirebaseCore in Frameworks */ = {isa = PBXBuildFile; productRef = 6BCB5F7D2D21B93D003C3D00 /* FirebaseCore */; };
+		6BCB5F802D21B93D003C3D00 /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = 6BCB5F7F2D21B93D003C3D00 /* FirebaseCrashlytics */; };
+		6BCB5F822D21B93D003C3D00 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 6BCB5F812D21B93D003C3D00 /* FirebaseDatabase */; };
+		6BCB5F8A2D21C653003C3D00 /* AuthModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BCB5F892D21C653003C3D00 /* AuthModel.swift */; };
+		6BCB5F8D2D21C682003C3D00 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BCB5F8C2D21C682003C3D00 /* AuthManager.swift */; };
+		6BCB5F912D21C6DF003C3D00 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BCB5F902D21C6DF003C3D00 /* LoginView.swift */; };
+		6BCB5F952D21C734003C3D00 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BCB5F942D21C734003C3D00 /* LoginViewModel.swift */; };
+		6BCB5F972D21C77F003C3D00 /* RegistrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BCB5F962D21C77F003C3D00 /* RegistrationViewModel.swift */; };
+		6BCB5F9A2D21C7AC003C3D00 /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BCB5F992D21C7AC003C3D00 /* RegistrationView.swift */; };
+		6BCB5F9C2D21CA81003C3D00 /* AuthState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BCB5F9B2D21CA81003C3D00 /* AuthState.swift */; };
 		6BD616022D11FBC0002F73AA /* TimerEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BD616012D11FBC0002F73AA /* TimerEditorView.swift */; };
 		6BD616042D11FDEC002F73AA /* TimerEditorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BD616032D11FDEC002F73AA /* TimerEditorViewModel.swift */; };
 		6BD616072D12084A002F73AA /* CustomInputStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BD616062D12084A002F73AA /* CustomInputStyle.swift */; };
@@ -118,11 +119,6 @@
 		6B10A5742CF8751100F15346 /* PrimaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButton.swift; sourceTree = "<group>"; };
 		6B10A5792CF8757900F15346 /* RoundedCorner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCorner.swift; sourceTree = "<group>"; };
 		6B10A57E2CF8781E00F15346 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
-		6B10A58E2CF879C900F15346 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
-		6B10A5922CF87A3600F15346 /* RegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
-		6B10A5962CF87A6100F15346 /* RegistrationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewModel.swift; sourceTree = "<group>"; };
-		6B10A59A2CF87ADD00F15346 /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
-		6B10A59E2CF87B2C00F15346 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		6B10A5A22CF87E2F00F15346 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		6B199B762D0428D300BB56D7 /* ToolBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolBar.swift; sourceTree = "<group>"; };
 		6B199B792D0435BF00BB56D7 /* BackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackButton.swift; sourceTree = "<group>"; };
@@ -140,7 +136,6 @@
 		6B893C0E2D05E99300C51778 /* CircularTimerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularTimerViewModel.swift; sourceTree = "<group>"; };
 		6B9C04242CF8380600777DE7 /* TeaTimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TeaTimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B9C04272CF8380600777DE7 /* TeaTimerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeaTimerApp.swift; sourceTree = "<group>"; };
-		6B9C04292CF8380600777DE7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		6B9C042B2CF8380800777DE7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6B9C042E2CF8380800777DE7 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		6B9C04342CF8380800777DE7 /* TeaTimerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TeaTimerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -160,6 +155,14 @@
 		6BC3ED842D0F13DE00C7EC91 /* NoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteView.swift; sourceTree = "<group>"; };
 		6BC3ED862D0F173100C7EC91 /* InfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoCell.swift; sourceTree = "<group>"; };
 		6BC3ED882D0F184300C7EC91 /* NoteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteViewModel.swift; sourceTree = "<group>"; };
+		6BCB5F762D21B802003C3D00 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		6BCB5F892D21C653003C3D00 /* AuthModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthModel.swift; sourceTree = "<group>"; };
+		6BCB5F8C2D21C682003C3D00 /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
+		6BCB5F902D21C6DF003C3D00 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		6BCB5F942D21C734003C3D00 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		6BCB5F962D21C77F003C3D00 /* RegistrationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewModel.swift; sourceTree = "<group>"; };
+		6BCB5F992D21C7AC003C3D00 /* RegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
+		6BCB5F9B2D21CA81003C3D00 /* AuthState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthState.swift; sourceTree = "<group>"; };
 		6BD616012D11FBC0002F73AA /* TimerEditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerEditorView.swift; sourceTree = "<group>"; };
 		6BD616032D11FDEC002F73AA /* TimerEditorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerEditorViewModel.swift; sourceTree = "<group>"; };
 		6BD616062D12084A002F73AA /* CustomInputStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomInputStyle.swift; sourceTree = "<group>"; };
@@ -172,6 +175,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6BCB5F822D21B93D003C3D00 /* FirebaseDatabase in Frameworks */,
+				6BCB5F7A2D21B93D003C3D00 /* FirebaseAnalytics in Frameworks */,
+				6BCB5F802D21B93D003C3D00 /* FirebaseCrashlytics in Frameworks */,
+				6BCB5F7E2D21B93D003C3D00 /* FirebaseCore in Frameworks */,
+				6BCB5F7C2D21B93D003C3D00 /* FirebaseAuth in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -192,18 +200,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		6B10A53C2CF8487000F15346 /* Services */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Services;
-			sourceTree = "<group>";
-		};
 		6B10A53D2CF8488900F15346 /* AuthModule */ = {
 			isa = PBXGroup;
 			children = (
-				6B10A5872CF8796300F15346 /* Login */,
-				6B10A5862CF8795100F15346 /* Registration */,
+				6BCB5F932D21C716003C3D00 /* ViewModel */,
+				6BCB5F8E2D21C6BC003C3D00 /* View */,
+				6BCB5F8B2D21C674003C3D00 /* Manager */,
+				6BCB5F882D21C640003C3D00 /* Models */,
 			);
 			path = AuthModule;
 			sourceTree = "<group>";
@@ -318,73 +321,6 @@
 			path = CustomButton;
 			sourceTree = "<group>";
 		};
-		6B10A5862CF8795100F15346 /* Registration */ = {
-			isa = PBXGroup;
-			children = (
-				6B10A58D2CF879AD00F15346 /* ViewModel */,
-				6B10A58C2CF879A300F15346 /* Model */,
-				6B10A58B2CF8799C00F15346 /* View */,
-			);
-			path = Registration;
-			sourceTree = "<group>";
-		};
-		6B10A5872CF8796300F15346 /* Login */ = {
-			isa = PBXGroup;
-			children = (
-				6B10A58A2CF8798D00F15346 /* ViewModel */,
-				6B10A5892CF8798500F15346 /* Model */,
-				6B10A5882CF8797700F15346 /* View */,
-			);
-			path = Login;
-			sourceTree = "<group>";
-		};
-		6B10A5882CF8797700F15346 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				6B10A58E2CF879C900F15346 /* LoginView.swift */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		6B10A5892CF8798500F15346 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				6B10A59A2CF87ADD00F15346 /* LoginModel.swift */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		6B10A58A2CF8798D00F15346 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				6B10A59E2CF87B2C00F15346 /* LoginViewModel.swift */,
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		6B10A58B2CF8799C00F15346 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				6B10A5922CF87A3600F15346 /* RegistrationView.swift */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		6B10A58C2CF879A300F15346 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		6B10A58D2CF879AD00F15346 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				6B10A5962CF87A6100F15346 /* RegistrationViewModel.swift */,
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
 		6B199B752D0428C100BB56D7 /* ToolBar */ = {
 			isa = PBXGroup;
 			children = (
@@ -472,6 +408,7 @@
 		6B9C04262CF8380600777DE7 /* TeaTimer */ = {
 			isa = PBXGroup;
 			children = (
+				6BCB5F832D21BBFE003C3D00 /* Service */,
 				6BD615FC2D11FA96002F73AA /* TimerEditorModule */,
 				6BC3ED802D0F130900C7EC91 /* NoteModule */,
 				6BB160442CFB95A9000E8A96 /* TeaInfoModule */,
@@ -480,15 +417,14 @@
 				6BB160412CFB9553000E8A96 /* TimerModule */,
 				6BB1603A2CFB7F19000E8A96 /* TimerListModule */,
 				6B10A53D2CF8488900F15346 /* AuthModule */,
-				6B10A53C2CF8487000F15346 /* Services */,
 				6B10A54B2CF863CA00F15346 /* Utility */,
 				6B10A5452CF84D1A00F15346 /* CustomView */,
 				6B9C04272CF8380600777DE7 /* TeaTimerApp.swift */,
-				6B9C04292CF8380600777DE7 /* ContentView.swift */,
 				6B3CAFED2CF8F3A30063B386 /* SourceSansPro-Regular.ttf */,
 				6BE0F14D2D04A16D005AA7E3 /* SourceSansPro-SemiBold.ttf */,
 				6B3CAFF12CF8F3BE0063B386 /* SourceSerif4-Regular.ttf */,
 				6B3CAFE82CF8EFD70063B386 /* Info.plist */,
+				6BCB5F762D21B802003C3D00 /* GoogleService-Info.plist */,
 				6B9C042B2CF8380800777DE7 /* Assets.xcassets */,
 				6B10A5A22CF87E2F00F15346 /* Localizable.xcstrings */,
 				6B10A5472CF84DAA00F15346 /* Colors.xcassets */,
@@ -668,6 +604,64 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		6BCB5F832D21BBFE003C3D00 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				6BCB5F842D21BC08003C3D00 /* Network */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		6BCB5F842D21BC08003C3D00 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		6BCB5F882D21C640003C3D00 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				6BCB5F892D21C653003C3D00 /* AuthModel.swift */,
+				6BCB5F9B2D21CA81003C3D00 /* AuthState.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		6BCB5F8B2D21C674003C3D00 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				6BCB5F8C2D21C682003C3D00 /* AuthManager.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		6BCB5F8E2D21C6BC003C3D00 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				6BCB5F8F2D21C6C4003C3D00 /* Core */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		6BCB5F8F2D21C6C4003C3D00 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				6BCB5F902D21C6DF003C3D00 /* LoginView.swift */,
+				6BCB5F992D21C7AC003C3D00 /* RegistrationView.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		6BCB5F932D21C716003C3D00 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				6BCB5F942D21C734003C3D00 /* LoginViewModel.swift */,
+				6BCB5F962D21C77F003C3D00 /* RegistrationViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		6BD615FC2D11FA96002F73AA /* TimerEditorModule */ = {
 			isa = PBXGroup;
 			children = (
@@ -718,6 +712,13 @@
 			dependencies = (
 			);
 			name = TeaTimer;
+			packageProductDependencies = (
+				6BCB5F792D21B93D003C3D00 /* FirebaseAnalytics */,
+				6BCB5F7B2D21B93D003C3D00 /* FirebaseAuth */,
+				6BCB5F7D2D21B93D003C3D00 /* FirebaseCore */,
+				6BCB5F7F2D21B93D003C3D00 /* FirebaseCrashlytics */,
+				6BCB5F812D21B93D003C3D00 /* FirebaseDatabase */,
+			);
 			productName = TeaTimer;
 			productReference = 6B9C04242CF8380600777DE7 /* TeaTimer.app */;
 			productType = "com.apple.product-type.application";
@@ -792,6 +793,7 @@
 			);
 			mainGroup = 6B9C041B2CF8380600777DE7;
 			packageReferences = (
+				6BCB5F782D21B93D003C3D00 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = 6B9C04252CF8380600777DE7 /* Products */;
 			projectDirPath = "";
@@ -810,6 +812,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6B3CAFEE2CF8F3A30063B386 /* SourceSansPro-Regular.ttf in Resources */,
+				6BCB5F772D21B802003C3D00 /* GoogleService-Info.plist in Resources */,
 				6B10A5482CF84DAA00F15346 /* Colors.xcassets in Resources */,
 				6B9C042F2CF8380800777DE7 /* Preview Assets.xcassets in Resources */,
 				6B10A5A32CF87E2F00F15346 /* Localizable.xcstrings in Resources */,
@@ -849,14 +852,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				6B10A5752CF8751100F15346 /* PrimaryButton.swift in Sources */,
+				6BCB5F972D21C77F003C3D00 /* RegistrationViewModel.swift in Sources */,
 				6B1C39302CFF62E400B006AE /* ProfileView.swift in Sources */,
 				6B10A5622CF86FC200F15346 /* LoadView.swift in Sources */,
-				6B10A5932CF87A3600F15346 /* RegistrationView.swift in Sources */,
+				6BCB5F912D21C6DF003C3D00 /* LoginView.swift in Sources */,
 				6B893C0D2D05E48F00C51778 /* CircularTimer.swift in Sources */,
 				6B10A57A2CF8757900F15346 /* RoundedCorner.swift in Sources */,
 				6BC3ED7C2D0F096E00C7EC91 /* HistoryCell.swift in Sources */,
-				6B10A59B2CF87ADD00F15346 /* LoginModel.swift in Sources */,
+				6BCB5F952D21C734003C3D00 /* LoginViewModel.swift in Sources */,
 				6B199B7D2D0446B500BB56D7 /* Characteristics.swift in Sources */,
+				6BCB5F9A2D21C7AC003C3D00 /* RegistrationView.swift in Sources */,
 				6BC3ED7F2D0F0AB000C7EC91 /* History.swift in Sources */,
 				6BB160402CFB7FBF000E8A96 /* TimerListViewModel.swift in Sources */,
 				6BA3FF0C2CFCB4DE00AB4B99 /* TimerView.swift in Sources */,
@@ -867,26 +872,25 @@
 				6B10A55D2CF86F3700F15346 /* CommonAlert.swift in Sources */,
 				6B199B772D0428D300BB56D7 /* ToolBar.swift in Sources */,
 				6B10A56B2CF8737500F15346 /* TextView.swift in Sources */,
+				6BCB5F8D2D21C682003C3D00 /* AuthManager.swift in Sources */,
 				6BA3FF112CFCBEC400AB4B99 /* BottomSheetHeader.swift in Sources */,
 				6BA3FF0A2CFCB45F00AB4B99 /* TeaInfoViewModel.swift in Sources */,
-				6B10A59F2CF87B2C00F15346 /* LoginViewModel.swift in Sources */,
+				6BCB5F8A2D21C653003C3D00 /* AuthModel.swift in Sources */,
 				6B10A57F2CF8781E00F15346 /* CustomButton.swift in Sources */,
-				6B10A5972CF87A6100F15346 /* RegistrationViewModel.swift in Sources */,
 				6B10A5672CF872F500F15346 /* HeightModifier.swift in Sources */,
 				6B199B7F2D04562300BB56D7 /* TimerToolBar.swift in Sources */,
+				6BCB5F9C2D21CA81003C3D00 /* AuthState.swift in Sources */,
 				6B199B7A2D0435BF00BB56D7 /* BackButton.swift in Sources */,
 				6BC3ED852D0F13DE00C7EC91 /* NoteView.swift in Sources */,
 				6BC3ED872D0F173100C7EC91 /* InfoCell.swift in Sources */,
 				6BD616022D11FBC0002F73AA /* TimerEditorView.swift in Sources */,
 				6BC3ED892D0F184300C7EC91 /* NoteViewModel.swift in Sources */,
 				6B54E8382CF890DD008BC4C4 /* EmailInput.swift in Sources */,
-				6B10A58F2CF879C900F15346 /* LoginView.swift in Sources */,
 				6B54E83C2CF891ED008BC4C4 /* PasswordInput.swift in Sources */,
 				6BD616042D11FDEC002F73AA /* TimerEditorViewModel.swift in Sources */,
 				6BB1603D2CFB7F62000E8A96 /* TimerListView.swift in Sources */,
 				6BA3FF0E2CFCB4F500AB4B99 /* TimerViewModel.swift in Sources */,
 				6BD616072D12084A002F73AA /* CustomInputStyle.swift in Sources */,
-				6B9C042A2CF8380600777DE7 /* ContentView.swift in Sources */,
 				6B3CAFEC2CF8F2070063B386 /* FontsList.swift in Sources */,
 				6B9C04282CF8380600777DE7 /* TeaTimerApp.swift in Sources */,
 				6BA3FF062CFCB26000AB4B99 /* TeaInfoView.swift in Sources */,
@@ -899,12 +903,9 @@
 			files = (
 				6B10A5632CF86FC200F15346 /* LoadView.swift in Sources */,
 				6B9C04392CF8380800777DE7 /* TeaTimerTests.swift in Sources */,
-				6B10A5982CF87A6100F15346 /* RegistrationViewModel.swift in Sources */,
-				6B10A5A02CF87B2C00F15346 /* LoginViewModel.swift in Sources */,
 				6B10A57B2CF8757900F15346 /* RoundedCorner.swift in Sources */,
 				6B10A5802CF8781E00F15346 /* CustomButton.swift in Sources */,
 				6B10A5682CF872F500F15346 /* HeightModifier.swift in Sources */,
-				6B10A59C2CF87ADD00F15346 /* LoginModel.swift in Sources */,
 				6B10A56C2CF8737500F15346 /* TextView.swift in Sources */,
 				6B10A55E2CF86F3700F15346 /* CommonAlert.swift in Sources */,
 				6B10A5762CF8751100F15346 /* PrimaryButton.swift in Sources */,
@@ -919,13 +920,10 @@
 				6B10A5772CF8751100F15346 /* PrimaryButton.swift in Sources */,
 				6B10A5642CF86FC200F15346 /* LoadView.swift in Sources */,
 				6B10A57C2CF8757900F15346 /* RoundedCorner.swift in Sources */,
-				6B10A59D2CF87ADD00F15346 /* LoginModel.swift in Sources */,
 				6B10A5532CF8646600F15346 /* AppColors.swift in Sources */,
 				6B10A55F2CF86F3700F15346 /* CommonAlert.swift in Sources */,
 				6B10A56D2CF8737500F15346 /* TextView.swift in Sources */,
-				6B10A5A12CF87B2C00F15346 /* LoginViewModel.swift in Sources */,
 				6B10A5812CF8781E00F15346 /* CustomButton.swift in Sources */,
-				6B10A5992CF87A6100F15346 /* RegistrationViewModel.swift in Sources */,
 				6B10A5692CF872F500F15346 /* HeightModifier.swift in Sources */,
 				6B9C04452CF8380800777DE7 /* TeaTimerUITestsLaunchTests.swift in Sources */,
 				6B9C04432CF8380800777DE7 /* TeaTimerUITests.swift in Sources */,
@@ -1243,6 +1241,45 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		6BCB5F782D21B93D003C3D00 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 11.6.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		6BCB5F792D21B93D003C3D00 /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6BCB5F782D21B93D003C3D00 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		6BCB5F7B2D21B93D003C3D00 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6BCB5F782D21B93D003C3D00 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		6BCB5F7D2D21B93D003C3D00 /* FirebaseCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6BCB5F782D21B93D003C3D00 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseCore;
+		};
+		6BCB5F7F2D21B93D003C3D00 /* FirebaseCrashlytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6BCB5F782D21B93D003C3D00 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseCrashlytics;
+		};
+		6BCB5F812D21B93D003C3D00 /* FirebaseDatabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6BCB5F782D21B93D003C3D00 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabase;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 6B9C041C2CF8380600777DE7 /* Project object */;
 }

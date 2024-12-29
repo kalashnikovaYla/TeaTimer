@@ -2,10 +2,10 @@
 //  RegistrationView.swift
 //  TeaTimer
 //
-//  Created by Юлия Калашникова on 28.11.2024.
+//  Created by Юлия Калашникова on 29.12.2024.
 //
 
-
+ 
 import Foundation
 import SwiftUI
 
@@ -15,7 +15,7 @@ struct RegistrationView: View {
     @FocusState private var isPasswordFocused: Bool
     @FocusState private var isSecondaryPasswordFocused: Bool
     
-    @State var viewModel = RegistrationViewModel()
+    @StateObject var viewModel: RegistrationViewModel 
     
     var body: some View {
         content
@@ -79,7 +79,7 @@ struct RegistrationView: View {
 }
 
 
-#Preview {
-    RegistrationView()
-}
+//#Preview {
+    //RegistrationView()
+//}
 

@@ -2,9 +2,8 @@
 //  LoginView.swift
 //  TeaTimer
 //
-//  Created by Юлия Калашникова on 28.11.2024.
+//  Created by Юлия Калашникова on 29.12.2024.
 //
-
 
 import Foundation
 import SwiftUI
@@ -14,7 +13,7 @@ struct LoginView: View {
     @FocusState private var emailIsFocused: Bool
     @FocusState private var isPasswordFocused: Bool
 
-    @State var viewModel = LoginViewModel()
+    @StateObject var viewModel: LoginViewModel 
     @State var isShowRegistrationView = false
     var body: some View {
         content
@@ -37,9 +36,6 @@ struct LoginView: View {
         .background(Colors.primaryBg.itm
             .ignoresSafeArea(.all)
         )
-        .fullScreenCover(isPresented: $isShowRegistrationView, content: {
-            RegistrationView()
-        })
     }
     
     private var inputSection: some View {
@@ -47,7 +43,7 @@ struct LoginView: View {
             
             EmailInput(email: $viewModel.email,
                        isFocused: _emailIsFocused)
-            PasswordInput(type: .enterPassword, 
+            PasswordInput(type: .enterPassword,
                           password: $viewModel.password,
                           isFocused: _isPasswordFocused)
             forgotPassword
@@ -67,7 +63,7 @@ struct LoginView: View {
     private var forgotPassword: some View {
         VStack(alignment: .trailing) {
             Button(action: {
-                viewModel.forgotPasswordButtonWasTapped()
+                //viewModel.forgotPasswordButtonWasTapped()
             }, label: {
                 Text("Forgot your password?")
                     .foregroundStyle(Colors.primaryBtn.itm)
@@ -82,7 +78,7 @@ struct LoginView: View {
         VStack(alignment: .center, spacing: 16, content: {
             
             Button(action: {
-                viewModel.login()
+                //viewModel.login()
             }, label: {
                 PrimaryButton(type: .fill,
                               title: "Login"~)
@@ -114,8 +110,10 @@ struct LoginView: View {
 
  
  
- #Preview {
-     LoginView()
- }
+ /*
+  #Preview {
+      LoginView()
+  }
+  */
 
  

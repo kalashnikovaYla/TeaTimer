@@ -8,7 +8,16 @@
  
 import Foundation
 
+
+
 final class TimerListViewModel: ObservableObject {
     
+    @Published var authState = AuthState.notAuthenticated
     
+    let authManager: AuthManagerProtocol = AuthManager()
+    
+    
+    func checkAuthState() {
+        
+    }
 }
