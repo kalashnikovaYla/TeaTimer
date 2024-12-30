@@ -41,7 +41,7 @@ struct TimerListView: View {
             RegistrationView(viewModel: RegistrationViewModel(authManager: viewModel.authManager))
         })
         .fullScreenCover(isPresented: $isShowProfileView, content: {
-            ProfileView()
+            ProfileView(vm: ProfileViewModel(authManager: viewModel.authManager))
         })
     }
    

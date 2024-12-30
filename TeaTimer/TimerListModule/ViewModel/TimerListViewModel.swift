@@ -14,8 +14,8 @@ final class TimerListViewModel: ObservableObject {
     
     @Published var authState = AuthState.notAuthenticated
     
-    let authManager: AuthManagerProtocol = AuthManager()
-    
+    let authManager = AuthManager()
+    let profileManager = ProfileManager()
     
     func checkAuthState() {
         

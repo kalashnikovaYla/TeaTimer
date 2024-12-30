@@ -63,7 +63,13 @@ struct LoginView: View {
     private var forgotPassword: some View {
         VStack(alignment: .trailing) {
             Button(action: {
-                viewModel.forgotPasswordButtonWasTapped()
+                Task {
+                    do {
+                        try await viewModel.forgotPasswordButtonWasTapped()
+                    } catch let errror {
+                        print(errror)
+                    }
+                }
             }, label: {
                 Text("Forgot your password?")
                     .foregroundStyle(Colors.primaryBtn.itm)
@@ -78,7 +84,13 @@ struct LoginView: View {
         VStack(alignment: .center, spacing: 16, content: {
             
             Button(action: {
-                viewModel.login()
+                Task {
+                    do {
+                        try await viewModel.login()
+                    } catch let errror {
+                        print(errror)
+                    }
+                }
             }, label: {
                 PrimaryButton(type: .fill,
                               title: "Login"~)

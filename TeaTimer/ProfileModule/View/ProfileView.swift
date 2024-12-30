@@ -16,6 +16,9 @@ enum ProfileCellType {
 struct ProfileView: View {
     
     @Environment(\.presentationMode) var presentationMode
+    
+    @StateObject var vm: ProfileViewModel
+    
     @State var isShowHistory = false
     @State var isShowFavorites = false
     
@@ -51,6 +54,9 @@ struct ProfileView: View {
         .background(Colors.primaryBg.itm
             .ignoresSafeArea(.all)
         )
+        .task {
+            try? await vm.loadCurrentUser()
+        }
     }
     
     private var mailCell: some View {
@@ -110,5 +116,5 @@ struct ProfileView: View {
 
 
 #Preview {
-    ProfileView()
+    ProfileView(vm: ProfileViewModel(authManager: AuthManager()))
 }

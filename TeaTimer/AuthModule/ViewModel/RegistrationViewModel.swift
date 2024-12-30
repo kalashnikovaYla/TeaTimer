@@ -14,9 +14,11 @@ final class RegistrationViewModel: ObservableObject {
     @Published var secondPassword = ""
    
     let authManager: AuthManagerProtocol
+    let profileManager: ProfileManager
     
-    init(authManager: AuthManagerProtocol) {
+    init(authManager: AuthManagerProtocol, profileManager: ProfileManager) {
         self.authManager = authManager
+        self.profileManager = profileManager
     }
     
     
@@ -30,6 +32,7 @@ final class RegistrationViewModel: ObservableObject {
             do {
                 let userData = try await authManager.createUser(email: email, password: password)
                 print(userData)
+                try? await profileManager.createNewUser(model: userData)
                 return
             } catch let error {
                 checkAccountExist()
