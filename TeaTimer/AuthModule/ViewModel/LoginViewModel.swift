@@ -21,11 +21,42 @@ final class LoginViewModel: ObservableObject {
     
     
     //MARK: Methods
-    func login() {
-        
+    func login() async throws {
+        guard !email.isEmpty, !password.isEmpty else {
+            return
+        }
+        Task {
+            do {
+                let userData = try await authManager.createUser(email: email, password: password)
+                print(userData)
+            } catch let error {
+                print("Error with sign up: \(error)")
+                //The password must be 6 characters long or more.
+            }
+        }
     }
     
-    func forgotPasswordButtonWasTapped() {
-        
+    func forgotPasswordButtonWasTapped() async throws {
+        Task {
+            do {
+                try await authManager.resetPassword(email: email)
+                 
+            } catch let error {
+                print("Error with sign up: \(error)")
+                //The password must be 6 characters long or more.
+            }
+        }
+    }
+    
+    func updatePassword() async throws {
+        Task {
+            do {
+                try await authManager.updatePassword(password: password)
+                 
+            } catch let error {
+                print("Error with sign up: \(error)")
+                //The password must be 6 characters long or more.
+            }
+        }
     }
 }

@@ -30,6 +30,20 @@ final class RegistrationViewModel: ObservableObject {
             do {
                 let userData = try await authManager.createUser(email: email, password: password)
                 print(userData)
+                return
+            } catch let error {
+                checkAccountExist()
+                print("Error with sign up: \(error)")
+                //The password must be 6 characters long or more.
+            }
+        }
+    }
+    
+    func checkAccountExist() {
+        Task {
+            do {
+                let userData = try await authManager.createUser(email: email, password: password)
+                print(userData)
             } catch let error {
                 print("Error with sign up: \(error)")
                 //The password must be 6 characters long or more.

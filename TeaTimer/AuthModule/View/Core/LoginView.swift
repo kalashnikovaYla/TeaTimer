@@ -63,7 +63,7 @@ struct LoginView: View {
     private var forgotPassword: some View {
         VStack(alignment: .trailing) {
             Button(action: {
-                //viewModel.forgotPasswordButtonWasTapped()
+                viewModel.forgotPasswordButtonWasTapped()
             }, label: {
                 Text("Forgot your password?")
                     .foregroundStyle(Colors.primaryBtn.itm)
@@ -78,7 +78,7 @@ struct LoginView: View {
         VStack(alignment: .center, spacing: 16, content: {
             
             Button(action: {
-                //viewModel.login()
+                viewModel.login()
             }, label: {
                 PrimaryButton(type: .fill,
                               title: "Login"~)
@@ -110,10 +110,10 @@ struct LoginView: View {
 
  
  
- /*
+ 
   #Preview {
-      LoginView()
+      LoginView(viewModel: LoginViewModel(authManager: AuthManager()))
   }
-  */
+  
 
  

@@ -79,7 +79,7 @@ struct RegistrationView: View {
 }
 
 
-//#Preview {
-    //RegistrationView()
-//}
+#Preview {
+    RegistrationView(viewModel: RegistrationViewModel(authManager: AuthManager()))
+}
 
