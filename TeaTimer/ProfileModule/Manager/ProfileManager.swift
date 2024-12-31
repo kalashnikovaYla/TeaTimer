@@ -9,37 +9,43 @@ import Foundation
 import FirebaseFirestore
  
 protocol ProfileManagerProtocol {
-    func createNewUser(model: AuthModel) async throws
+    func createNewUser(user: DBUser) async throws 
     func getUserId(userId: String) async throws -> DBUser
 }
 
-struct DBUser: Codable {
-    let userId: String
-    var history: [String]?
-    var favorite: [String]?
-}
 
 final class ProfileManager {
     
-    func createNewUser(model: AuthModel) async throws {
-        var userData: [String: Any] = [
-            "userId": model.uid
-        ]
-        
-        if let email = model.email {
-            userData["email"] = email
-        }
-        
-        try await Firestore.firestore().collection("users").document(model.uid).setData(userData,
-                                                                                        merge: false)
+    private let userCollection = Firestore.firestore().collection("users")
+   
+    private func userDocument(userId: String) -> DocumentReference {
+        userCollection.document(userId)
+    }
+   
+    func createNewUser(user: DBUser) async throws {
+        try userDocument(userId: user.userId).setData(from: user, merge: false )
     }
     
     func getUserId(userId: String) async throws -> DBUser {
-        let snapshot = try await Firestore.firestore().collection("users").document(userId).getDocument()
-        
-        guard let data = snapshot.data(), let id = data["userId"] else {
-            throw URLError(.badServerResponse)
-        }
-        return DBUser(userId: userId, history: nil, favorite: nil)
+        try await userDocument(userId: userId).getDocument(as: DBUser.self)
+    }
+    
+    func updateModel(user: DBUser) async throws {
+        try userDocument(userId: user.userId).setData(from: user,
+                                                      merge: true)
+    }
+    
+    func updateHistory(user: DBUser, history: [String]) async throws {
+        var data: [String:Any] = [
+            "history": history
+        ]
+        try await userDocument(userId: user.userId).updateData(data)
+    }
+    
+    func updateFavorite(user: DBUser, favorite: [String]) async throws {
+        var data: [String:Any] = [
+            "favorite": favorite
+        ]
+        try await userDocument(userId: user.userId).updateData(data)
     }
 }

@@ -116,5 +116,6 @@ struct ProfileView: View {
 
 
 #Preview {
-    ProfileView(vm: ProfileViewModel(authManager: AuthManager()))
+    ProfileView(vm: ProfileViewModel(authManager: AuthManager(), 
+                                     profileManager: ProfileManager()))
 }

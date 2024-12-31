@@ -80,6 +80,7 @@ struct RegistrationView: View {
 
 
 #Preview {
-    RegistrationView(viewModel: RegistrationViewModel(authManager: AuthManager()))
+    RegistrationView(viewModel: RegistrationViewModel(authManager: AuthManager(),
+                                                      profileManager: ProfileManager()))
 }
 

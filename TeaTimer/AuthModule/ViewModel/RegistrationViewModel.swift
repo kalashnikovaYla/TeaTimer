@@ -31,8 +31,8 @@ final class RegistrationViewModel: ObservableObject {
         Task {
             do {
                 let userData = try await authManager.createUser(email: email, password: password)
-                print(userData)
-                try? await profileManager.createNewUser(model: userData)
+                let user = DBUser(auth: userData)
+                try? await profileManager.createNewUser(user: user)
                 return
             } catch let error {
                 checkAccountExist()

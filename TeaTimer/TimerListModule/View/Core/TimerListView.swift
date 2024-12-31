@@ -2,9 +2,10 @@
 //  TimerListView.swift
 //  TeaTimer
 //
-//  Created by Юлия Калашникова on 30.11.2024.
+//  Created by Юлия Калашникова on 30.12.2024.
 //
 
+ 
 import Foundation
 import SwiftUI
 
@@ -38,10 +39,12 @@ struct TimerListView: View {
             LoginView(viewModel: LoginViewModel(authManager: viewModel.authManager))
         })
         .fullScreenCover(isPresented: $isShowRegView, content: {
-            RegistrationView(viewModel: RegistrationViewModel(authManager: viewModel.authManager))
+            RegistrationView(viewModel: RegistrationViewModel(authManager: viewModel.authManager,
+                                                              profileManager: viewModel.profileManager))
         })
         .fullScreenCover(isPresented: $isShowProfileView, content: {
-            ProfileView(vm: ProfileViewModel(authManager: viewModel.authManager))
+            ProfileView(vm: ProfileViewModel(authManager: viewModel.authManager,
+                                             profileManager: viewModel.profileManager))
         })
     }
    
