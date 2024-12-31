@@ -8,16 +8,28 @@
  
 import Foundation
 
-
-
 final class TimerListViewModel: ObservableObject {
     
     @Published var authState = AuthState.notAuthenticated
+    @Published var data: [TeaModel] = []
     
+
     let authManager = AuthManager()
     let profileManager = ProfileManager()
+    let dbManager = DBManager()
     
-    func checkAuthState() {
-        
+    init() {
+        getData()
+    }
+    
+    func getData() {
+        dbManager.getTeas { [weak self] result in
+            switch result {
+            case .success(let success):
+                self?.data = success
+            case .failure(let error):
+                print("Error with fetch teas: \(error)")
+            }
+        }
     }
 }

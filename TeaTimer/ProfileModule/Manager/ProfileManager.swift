@@ -11,6 +11,9 @@ import FirebaseFirestore
 protocol ProfileManagerProtocol {
     func createNewUser(user: DBUser) async throws 
     func getUserId(userId: String) async throws -> DBUser
+    func updateModel(user: DBUser) async throws
+    func updateHistory(user: DBUser, history: [String]) async throws
+    func updateFavorite(user: DBUser, favorite: [String]) async throws
 }
 
 

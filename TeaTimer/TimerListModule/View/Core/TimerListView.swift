@@ -82,38 +82,49 @@ struct TimerListView: View {
     private var list: some View {
         VStack(spacing: 0, content: {
             ScrollView {
-                createCell()
+                ForEach(viewModel.data) { model in
+                    createCell(model: model)
+                }
             }
         })
     }
     
     
-    private func createCell() -> some View {
+    private func createCell(model: TeaModel) -> some View {
         Button(action: {
             
         }, label: {
             HStack(alignment: .center, content: {
                 VStack(alignment: .leading, spacing: 8, content: {
-                    Text("Зелёный")
-                        .font(.custom(Fonts.bold.itm,
-                                      size: 24))
-                        .foregroundStyle(Colors.primaryTxt.itm)
+                    if let name = model.cName {
+                        Text(name)
+                            .font(.custom(Fonts.bold.itm,
+                                          size: 24))
+                            .foregroundStyle(Colors.primaryTxt.itm)
+                    }
                     
                     HStack(spacing: 4, content: {
-                        Text("3 мин")
-                        Text("70-80°C")
+                        if let sec = model.maxBrewTime {
+                            let min = sec/60
+                            Text("\(min) мин")
+                        }
+                       
+                        if let temp = model.brewingTemperature {
+                            Text("\(temp)° C")
+                        }
+                        
                     })
                     .font(.custom(Fonts.primary.itm,
                                   size: 17))
                     .foregroundStyle(Colors.secondaryTxt.itm)
                 })
                 .frame(maxWidth: .infinity, alignment: .leading)
-                
-                Image("")
-                    .resizable()
-                    .frame(width: 69, height: 69)
-                    .aspectRatio(contentMode: .fill)
-                    .clipShape(Circle())
+
+                if let strUrl = model.image, let url = URL(string: strUrl) {
+                    AsyncImage(url: url)
+                        .frame(width: 69, height: 69)
+                        .clipShape(Circle())
+                }
             })
             .padding(.horizontal)
             .padding(.vertical, 20)
