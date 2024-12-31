@@ -8,6 +8,11 @@
 import Foundation
 import FirebaseFirestore
 
+protocol DBManagerProtocol {
+    func getTeas(completion: @escaping (Result<[TeaModel], Error>) -> Void)
+}
+
+
 final class DBManager {
    
     private let collection = Firestore.firestore().collection("teas")

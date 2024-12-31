@@ -32,4 +32,13 @@ final class TimerListViewModel: ObservableObject {
             }
         }
     }
+    
+    func addFavoriteWasTapped(model: TeaModel) {
+        Task {
+            guard let auth = try? authManager.getAuthUser(),
+                  let user  = try? await profileManager.getUserId(userId: auth.uid)
+            else {return}
+            profileManager.addFavorite(user: user, teaId: model.id)
+        }
+    }
 }

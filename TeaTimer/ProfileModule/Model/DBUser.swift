@@ -10,8 +10,8 @@ import Foundation
 struct DBUser: Codable {
     let userId: String
     let email: String?
-    var history: [String]?
-    var favorite: [String]?
+    var history: String?
+    var favorite: String?
     
     init(auth: AuthModel) {
         self.userId = auth.uid

@@ -130,8 +130,14 @@ struct TimerListView: View {
             .padding(.vertical, 20)
             .background(Colors.secondaryBg.itm)
             .clipShape(RoundedCorner(radius: 16))
+            .contextMenu(ContextMenu(menuItems: {
+                Button("Add to favorites") {
+                    viewModel.addFavoriteWasTapped(model: model)
+                }
+            }))
             .padding(.horizontal)
         })
+       
     }
 }
 

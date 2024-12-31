@@ -20,6 +20,9 @@ protocol AuthManagerProtocol {
 
 final class AuthManager: AuthManagerProtocol {
     
+    var user: AuthModel? = nil
+    
+    
     func checkShowSignUp() -> Bool {
         let authUser = try? getAuthUser()
         return authUser == nil
@@ -29,8 +32,9 @@ final class AuthManager: AuthManagerProtocol {
         guard let user = Auth.auth().currentUser else {
             throw URLError(.badServerResponse)
         }
-        
-        return AuthModel(user: user)
+        let model = AuthModel(user: user)
+        self.user = model
+        return model 
     }
     
     @discardableResult

@@ -14,6 +14,8 @@ protocol ProfileManagerProtocol {
     func updateModel(user: DBUser) async throws
     func updateHistory(user: DBUser, history: [String]) async throws
     func updateFavorite(user: DBUser, favorite: [String]) async throws
+    func addFavorite(userId: String, favoriteId: String) async throws
+    func removeFavorite(userId: String, favoriteProductId: String) async throws
 }
 
 
@@ -21,10 +23,19 @@ final class ProfileManager {
     
     private let userCollection = Firestore.firestore().collection("users")
    
+    
     private func userDocument(userId: String) -> DocumentReference {
         userCollection.document(userId)
     }
-   
+    
+    private func userFavoriteCollecton(userId: String) -> CollectionReference {
+        userCollection.document(userId).collection("favorite")
+    }
+    
+    private func userHistoryCollecton(userId: String) -> CollectionReference {
+        userCollection.document(userId).collection("history")
+    }
+    
     func createNewUser(user: DBUser) async throws {
         try userDocument(userId: user.userId).setData(from: user, merge: false )
     }
@@ -38,17 +49,38 @@ final class ProfileManager {
                                                       merge: true)
     }
     
-    func updateHistory(user: DBUser, history: [String]) async throws {
-        var data: [String:Any] = [
-            "history": history
+    func addHistory(userId: String, teaId: String) async throws {
+        let document = userHistoryCollecton(userId: userId).document()
+        let documentId = document.documentID
+        let data: [String:Any] = [
+            "id": documentId,
+            "date": Timestamp(),
+            "teaId": teaId
         ]
-        try await userDocument(userId: user.userId).updateData(data)
+        try await document.setData(data, merge: false)
     }
     
-    func updateFavorite(user: DBUser, favorite: [String]) async throws {
-        var data: [String:Any] = [
-            "favorite": favorite
-        ]
-        try await userDocument(userId: user.userId).updateData(data)
+    func addFavorite(user: DBUser, teaId: String) {
+        let document = userHistoryCollecton(userId: user.userId).document()
+        
+        document.updateData(["favorite": FieldValue.arrayUnion([teaId])]) { error in
+            if let error = error {
+                print("Error updating document: \(error)")
+            } else {
+                print("Favorite updated successfully.")
+            }
+        }
+    }
+    func removeFavorite(user: DBUser, teaId: String) {
+        let document = userHistoryCollecton(userId: user.userId).document()
+      
+        document.updateData(["favorite": FieldValue.arrayRemove([teaId])]) { error in
+            if let error = error {
+                print("Error updating document: \(error)")
+            } else {
+                print("Favorite removed successfully.")
+            }
+        }
     }
 }
+
