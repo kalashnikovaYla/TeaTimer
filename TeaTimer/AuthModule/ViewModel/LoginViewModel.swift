@@ -11,7 +11,7 @@ final class LoginViewModel: ObservableObject {
     
     @Published var email = ""
     @Published var password = ""
-    @Published var isShowRegistrationView = false
+    
     
     let authManager: AuthManagerProtocol
     

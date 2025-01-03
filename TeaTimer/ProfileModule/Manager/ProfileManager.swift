@@ -12,18 +12,15 @@ protocol ProfileManagerProtocol {
     func createNewUser(user: DBUser) async throws 
     func getUserId(userId: String) async throws -> DBUser
     func updateModel(user: DBUser) async throws
-    func updateHistory(user: DBUser, history: [String]) async throws
-    func updateFavorite(user: DBUser, favorite: [String]) async throws
-    func addFavorite(userId: String, favoriteId: String) async throws
-    func removeFavorite(userId: String, favoriteProductId: String) async throws
+    func addFavorite(user: DBUser, teaId: String)
+    func removeFavorite(user: DBUser, teaId: String)
 }
 
 
-final class ProfileManager {
+final class ProfileManager: ProfileManagerProtocol {
     
     private let userCollection = Firestore.firestore().collection("users")
    
-    
     private func userDocument(userId: String) -> DocumentReference {
         userCollection.document(userId)
     }
@@ -71,6 +68,7 @@ final class ProfileManager {
             }
         }
     }
+    
     func removeFavorite(user: DBUser, teaId: String) {
         let document = userHistoryCollecton(userId: user.userId).document()
       

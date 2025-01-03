@@ -96,6 +96,7 @@
 		6BD616072D12084A002F73AA /* CustomInputStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BD616062D12084A002F73AA /* CustomInputStyle.swift */; };
 		6BD616092D120AB0002F73AA /* PlaceholderStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BD616082D120AB0002F73AA /* PlaceholderStyle.swift */; };
 		6BE0F14E2D04A16D005AA7E3 /* SourceSansPro-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6BE0F14D2D04A16D005AA7E3 /* SourceSansPro-SemiBold.ttf */; };
+		6BFC08192D28347F00BC792F /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BFC08182D28347F00BC792F /* Coordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -180,6 +181,7 @@
 		6BD616062D12084A002F73AA /* CustomInputStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomInputStyle.swift; sourceTree = "<group>"; };
 		6BD616082D120AB0002F73AA /* PlaceholderStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceholderStyle.swift; sourceTree = "<group>"; };
 		6BE0F14D2D04A16D005AA7E3 /* SourceSansPro-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-SemiBold.ttf"; sourceTree = "<group>"; };
+		6BFC08182D28347F00BC792F /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -407,6 +409,7 @@
 		6B9C04262CF8380600777DE7 /* TeaTimer */ = {
 			isa = PBXGroup;
 			children = (
+				6BFC08172D28346F00BC792F /* Coordinator */,
 				6BD615FC2D11FA96002F73AA /* TimerEditorModule */,
 				6BC3ED802D0F130900C7EC91 /* NoteModule */,
 				6BB160442CFB95A9000E8A96 /* TeaInfoModule */,
@@ -730,6 +733,14 @@
 			path = Style;
 			sourceTree = "<group>";
 		};
+		6BFC08172D28346F00BC792F /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				6BFC08182D28347F00BC792F /* Coordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -907,6 +918,7 @@
 				6B893C0F2D05E99300C51778 /* CircularTimerViewModel.swift in Sources */,
 				6BD616092D120AB0002F73AA /* PlaceholderStyle.swift in Sources */,
 				6BA357A52D229FA3004A9D94 /* ProfileViewModel.swift in Sources */,
+				6BFC08192D28347F00BC792F /* Coordinator.swift in Sources */,
 				6BA357B82D22B82C004A9D94 /* DBUser.swift in Sources */,
 				6B10A55D2CF86F3700F15346 /* CommonAlert.swift in Sources */,
 				6B199B772D0428D300BB56D7 /* ToolBar.swift in Sources */,

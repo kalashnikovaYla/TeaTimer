@@ -13,8 +13,12 @@ struct LoginView: View {
     @FocusState private var emailIsFocused: Bool
     @FocusState private var isPasswordFocused: Bool
 
-    @StateObject var viewModel: LoginViewModel 
-    @State var isShowRegistrationView = false
+    @StateObject var viewModel: LoginViewModel
+    
+    @State var isShowRegView = false
+    
+    let coordinator: any AppCoordinator
+    
     var body: some View {
         content
     }
@@ -36,6 +40,9 @@ struct LoginView: View {
         .background(Colors.primaryBg.itm
             .ignoresSafeArea(.all)
         )
+        .fullScreenCover(isPresented: $isShowRegView, content: {
+            coordinator.createRegView()
+        })
     }
     
     private var inputSection: some View {
@@ -108,8 +115,7 @@ struct LoginView: View {
                 .foregroundStyle(Colors.secondaryTxt.itm)
             
             Button(action: {
-                print("7")
-                isShowRegistrationView.toggle()
+                 isShowRegView = true
             }, label: {
                 Text("Registration")
                     .font(.custom(Fonts.primary.itm,
@@ -123,9 +129,10 @@ struct LoginView: View {
  
  
  
-  #Preview {
-      LoginView(viewModel: LoginViewModel(authManager: AuthManager()))
-  }
+#Preview {      
+    LoginView(viewModel: LoginViewModel(authManager: AuthManager()), 
+              coordinator: Coordinator())
+}
   
 
  

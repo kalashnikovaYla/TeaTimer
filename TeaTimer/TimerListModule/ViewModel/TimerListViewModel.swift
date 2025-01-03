@@ -10,10 +10,8 @@ import Foundation
 
 final class TimerListViewModel: ObservableObject {
     
-    @Published var authState = AuthState.notAuthenticated
     @Published var data: [TeaModel] = []
     
-
     let authManager = AuthManager()
     let profileManager = ProfileManager()
     let dbManager = DBManager()

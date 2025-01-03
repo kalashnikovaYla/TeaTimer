@@ -11,13 +11,13 @@ import Foundation
 final class ProfileViewModel: ObservableObject {
     
     let authManager: AuthManagerProtocol
-    let profileManager: ProfileManager
+    let profileManager: ProfileManagerProtocol
     
     @Published private(set) var user: DBUser? = nil
     
      
     
-    init(authManager: AuthManagerProtocol, profileManager: ProfileManager) {
+    init(authManager: AuthManagerProtocol, profileManager: ProfileManagerProtocol) {
         self.authManager = authManager
         self.profileManager = profileManager
     }

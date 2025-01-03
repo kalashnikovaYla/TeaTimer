@@ -16,6 +16,8 @@ struct RegistrationView: View {
     @FocusState private var isSecondaryPasswordFocused: Bool
     
     @StateObject var viewModel: RegistrationViewModel 
+    let coordinator: Coordinator
+    
     
     var body: some View {
         content
@@ -24,7 +26,7 @@ struct RegistrationView: View {
     //MARK: - Subviews
     private var content: some View {
         VStack(alignment: .leading, spacing: 0) {
-            ToolBar(type: .withLogin)
+            ToolBar(type: .withDissmiss)
             titleContainer
             inputContainer
             
@@ -80,7 +82,6 @@ struct RegistrationView: View {
 
 
 #Preview {
-    RegistrationView(viewModel: RegistrationViewModel(authManager: AuthManager(),
-                                                      profileManager: ProfileManager()))
+    RegistrationView(viewModel: RegistrationViewModel(authManager: AuthManager()), coordinator: Coordinator())
 }
 

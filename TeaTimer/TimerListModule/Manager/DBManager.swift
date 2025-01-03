@@ -13,7 +13,7 @@ protocol DBManagerProtocol {
 }
 
 
-final class DBManager {
+final class DBManager: DBManagerProtocol {
    
     private let collection = Firestore.firestore().collection("teas")
     

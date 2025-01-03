@@ -13,7 +13,7 @@ struct TimerListView: View {
     
     @StateObject var viewModel = TimerListViewModel()
     
-   
+    @StateObject var coordinator = Coordinator()
     @State var isShowCreateTimer = false
     @State var isShowLoginView = false
     @State var isShowRegView = false
@@ -36,15 +36,13 @@ struct TimerListView: View {
             TimerView()
         })
         .fullScreenCover(isPresented: $isShowLoginView, content: {
-            LoginView(viewModel: LoginViewModel(authManager: viewModel.authManager))
+            coordinator.createLoginView()
         })
         .fullScreenCover(isPresented: $isShowRegView, content: {
-            RegistrationView(viewModel: RegistrationViewModel(authManager: viewModel.authManager,
-                                                              profileManager: viewModel.profileManager))
+            coordinator.createRegView()
         })
         .fullScreenCover(isPresented: $isShowProfileView, content: {
-            ProfileView(vm: ProfileViewModel(authManager: viewModel.authManager,
-                                             profileManager: viewModel.profileManager))
+            coordinator.createProfileView()
         })
     }
    
