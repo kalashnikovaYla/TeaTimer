@@ -11,10 +11,11 @@ protocol AppCoordinator: ObservableObject {
     func createLoginView() -> LoginView
     func createRegView() -> RegistrationView
     func createProfileView() -> ProfileView
+    func setUser(model: AuthModel) async
 }
 
 final class Coordinator: AppCoordinator, ObservableObject {
-     
+  
     private let authManager: AuthManagerProtocol
     private let profileManager: ProfileManagerProtocol
     private let dbManager: DBManager
@@ -33,14 +34,20 @@ final class Coordinator: AppCoordinator, ObservableObject {
     }
     
     func createRegView() -> RegistrationView {
-         let vm = RegistrationViewModel(authManager: self.authManager)
-         return RegistrationView(viewModel: vm, coordinator: self)
+         let vm = RegistrationViewModel(authManager: self.authManager, coordinator: self)
+         return RegistrationView(viewModel: vm)
     }
     
     func createProfileView() -> ProfileView {
         let vm = ProfileViewModel(authManager: authManager,
                                   profileManager: profileManager)
         return ProfileView(vm: vm)
+    }
+    
+    func setUser(model: AuthModel) async {
+        authState = .authenticated
+        let user = DBUser(auth: model)
+        try? await profileManager.createNewUser(user: user)
     }
 }
 

@@ -16,7 +16,6 @@ struct RegistrationView: View {
     @FocusState private var isSecondaryPasswordFocused: Bool
     
     @StateObject var viewModel: RegistrationViewModel 
-    let coordinator: Coordinator
     
     
     var body: some View {
@@ -82,6 +81,6 @@ struct RegistrationView: View {
 
 
 #Preview {
-    RegistrationView(viewModel: RegistrationViewModel(authManager: AuthManager()), coordinator: Coordinator())
+    RegistrationView(viewModel: RegistrationViewModel(authManager: AuthManager(), coordinator: Coordinator()))
 }
 

@@ -27,7 +27,14 @@ struct TimerListView: View {
     //MARK: - SubViews
     private var content: some View {
         VStack(spacing: 0, content: {
-            ToolBar(delegate: self, type: .withLogin)
+            
+            switch coordinator.authState {
+            case .authenticated :
+                ToolBar(delegate: self, type: .withProfile)
+            case .notAuthenticated:
+                ToolBar(delegate: self, type: .withLogin)
+            }
+           
             titleContainer
             list
         })
