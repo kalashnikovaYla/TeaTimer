@@ -19,16 +19,19 @@ enum Direction {
     
 }
 
+protocol TimerViewProtocol {
+    func setData(totalSeconds: Int)
+}
+
+
 struct TimerView: View {
     
     @StateObject var viewModel: TimerViewModel 
     
-    @State var state: StateTimerView = .timeIsUp
     @State var isShowNoteView = false
     @State var isShowDetailView = false
     
-    let coordinator: any AppCoordinator
-    
+    var delegate: TimerViewProtocol?
     
     var body: some View {
        content
@@ -43,11 +46,11 @@ struct TimerView: View {
             VStack(spacing: 12, content: {
                 titleContainer
                 
-                Characteristics(models: coordinator.createCharacteristics())
+                Characteristics(models: viewModel.coordinator.createCharacteristics())
                     .padding(.horizontal)
             })
            
-            switch state {
+            switch viewModel.state {
             case .setTimer:
                 setTimeContainer
             case .countdown, .timeIsUp:
@@ -60,7 +63,7 @@ struct TimerView: View {
             .ignoresSafeArea(.all)
         )
         .sheet(isPresented: $isShowDetailView, content: {
-            coordinator.createTeaInfoView()
+            viewModel.coordinator.createTeaInfoView()
                 .presentationDetents([.large])
         })
     }
@@ -97,7 +100,7 @@ struct TimerView: View {
             
              
             Button(action: {
-                viewModel.beginButtonWasTappped()
+                viewModel.beginButtonWasTapped()
             }, label: {
                 PrimaryButton(type: .fill,
                               title: "Begin"~)
@@ -138,14 +141,14 @@ struct TimerView: View {
     private var countdownContainer: some View {
         VStack(spacing: 0, content: {
             VStack(spacing: 30) {
-                CircularTimer()
+                CircularTimer(vm: viewModel)
                     
                 directionButtonSection
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             
             
-            if state == .countdown {
+            if viewModel.state == .countdown {
                 countdownButtonSection
             } else {
                 Button(action: {
@@ -233,15 +236,8 @@ struct TimerView: View {
 }
 
 #Preview {
-    TimerView(viewModel: TimerViewModel(model: TeaModel(id: "", 
-                                                        cName: "Зеленый чай",
-                                                        minBrewTime: 600,
-                                                        maxBrewTime: 5400,
-                                                        brewingTemperature: 80,
-                                                        numbersOfBrews: 2,
-                                                        description: "",
-                                                        image: "")),
-              coordinator: Coordinator())
+    TimerView(viewModel: TimerViewModel(model: TeaModel.mock(),
+                                        coordinator: Coordinator()))
 }
 
 

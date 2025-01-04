@@ -9,8 +9,7 @@ import SwiftUI
 
 struct CircularTimer: View {
     
-    @StateObject var vm = CircularTimerViewModel()
-    
+    @ObservedObject var vm: TimerViewModel
     
     var body: some View {
         VStack(spacing: 0, content: {
@@ -66,11 +65,7 @@ struct CircularTimer: View {
                 })
             })
         })
-         
-        .onTapGesture {
-            vm.minute = 3
-            vm.startTimer()
-        }
+       
         .onReceive(Timer.publish(every: 1, on: .main, in: .common).autoconnect(), perform: { _ in
             if vm.isStarted {
                 vm.updateTimer()
@@ -78,71 +73,14 @@ struct CircularTimer: View {
         })
         .frame(maxWidth: 258, maxHeight: 258)
     }
-    
 }
 
 
 #Preview {
-    CircularTimer()
+    @State var isStarted = true 
+    @State var totalSeconds = 600
+    
+    return CircularTimer(vm: TimerViewModel(model: TeaModel.mock(),
+                                            coordinator: Coordinator()))
 }
 
-
-/*
- //MARK: NewTimerView
- 
- 
- NewTimerView()
-     .frame(maxHeight: .infinity, alignment: .bottom)
-     .offset(y: vm.addNewTimer ? 0 : 400)
- 
- .overlay {
-     ZStack {
-         Color.black
-             .opacity(vm.addNewTimer ? 0.25 : 0)
-             .onTapGesture {
-                 vm.addNewTimer = false
-             }
-     }
-     .animation(.easeInOut, value: vm.addNewTimer)
-
- }
- @ViewBuilder
- func NewTimerView() -> some View {
-     VStack(spacing: 15, content: {
-         Text("Add new timer")
-         
-         HStack(spacing: 15, content: {
-             Text("\(vm.hour) hr")
-                 .padding(.horizontal, 20)
-                 .padding(.vertical, 12)
-                 .background {
-                     Capsule()
-                         .fill(.white.opacity(0.07))
-                 }
-             
-             Text("\(vm.minute) min")
-                 .padding(.horizontal, 20)
-                 .padding(.vertical, 12)
-                 .background {
-                     Capsule()
-                         .fill(.white.opacity(0.07))
-                 }
-             
-             Text("\(vm.seconds) sec")
-                 .padding(.horizontal, 20)
-                 .padding(.vertical, 12)
-                 .background {
-                     Capsule()
-                         .fill(.white.opacity(0.07))
-                 }
-         })
-     })
-     .padding()
-     .frame(maxWidth: .infinity)
-     .background {
-         RoundedRectangle(cornerRadius: 10, style: .continuous)
-             .fill(Colors.primaryBg.itm)
-             .ignoresSafeArea()
-     }
- }
- */

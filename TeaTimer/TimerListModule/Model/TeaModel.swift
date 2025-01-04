@@ -18,3 +18,17 @@ struct TeaModel: Codable, Identifiable {
     let description: String?
     let image: String? 
 }
+
+extension TeaModel {
+    static func mock() -> TeaModel {
+        return TeaModel(id: "1",
+                        cName: "Зеленый чай",
+                        minBrewTime: 600,
+                        maxBrewTime: 5400,
+                        brewingTemperature: 80,
+                        numbersOfBrews: 2,
+                        description: "Описание зеленого чая",
+                        image: "green_tea_image")
+    }
+}
+

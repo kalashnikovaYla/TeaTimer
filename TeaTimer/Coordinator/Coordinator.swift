@@ -61,8 +61,8 @@ final class Coordinator: AppCoordinator, ObservableObject {
     }
     
     func createTimerView() -> TimerView {
-        let vm = TimerViewModel(model: selectedTea)
-        return TimerView(viewModel: vm, coordinator: self)
+        let vm = TimerViewModel(model: selectedTea, coordinator: self)
+        return TimerView(viewModel: vm)
     }
     
     func createTeaInfoView() -> TeaInfoView {
