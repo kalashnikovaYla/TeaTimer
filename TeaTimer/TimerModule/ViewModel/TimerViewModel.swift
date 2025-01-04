@@ -16,6 +16,13 @@ final class TimerViewModel: ObservableObject {
     let hours = Array(0...23)
     let minutes = [0, 15, 30, 45]
     
+    let model: TeaModel?
+    
+    init(model: TeaModel?) {
+        self.model = model
+    }
+    
+    
     func beginButtonWasTappped() {
         
     }

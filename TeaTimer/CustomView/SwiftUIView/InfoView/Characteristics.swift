@@ -8,12 +8,14 @@
 import SwiftUI 
 
 struct Characteristics: View {
+    let models: [CharacteristicsModel]
+   
     var body: some View {
         HStack(alignment: .center, content: {
-            ForEach(0..<3) { index in
-                createCell(image: "temper",
-                           title: "70-80°C")
-                if index != 2 {
+            ForEach(models) { model in
+                createCell(model: model)
+                
+                if model.id != models.last?.id {
                     Rectangle()
                         .fill(Colors.primaryBorder.itm)
                         .frame(width: 1, height: 50)
@@ -30,19 +32,20 @@ struct Characteristics: View {
         .padding(.horizontal)
     }
     
-    private func createCell(image: String?, title: String) -> some View {
+    private func createCell(model: CharacteristicsModel) -> some View {
         VStack(spacing: 2, content: {
-            if let image = image {
+            if let image = model.image {
                 Image(image)
                     .resizable()
                     . frame(width: 24, height: 24)
             }
            
-            
-            Text(title)
-                .foregroundStyle(Colors.secondaryTxt.itm)
-                .font(.custom(Fonts.primary.itm,
-                              size: 17))
+            if let title = model.title {
+                Text(title)
+                    .foregroundStyle(Colors.secondaryTxt.itm)
+                    .font(.custom(Fonts.primary.itm,
+                                  size: 17))
+            }
         })
         .frame(maxWidth: .infinity)
        
@@ -51,5 +54,5 @@ struct Characteristics: View {
 
 
 #Preview {
-    Characteristics()
+    Characteristics(models: [])
 }

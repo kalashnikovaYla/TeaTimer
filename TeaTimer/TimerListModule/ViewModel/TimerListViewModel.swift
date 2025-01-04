@@ -11,6 +11,8 @@ import Foundation
 final class TimerListViewModel: ObservableObject {
     
     @Published var data: [TeaModel] = []
+    @Published var selectedTea: TeaModel?
+    
     
     let authManager = AuthManager()
     let profileManager = ProfileManager()

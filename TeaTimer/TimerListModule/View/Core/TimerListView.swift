@@ -40,7 +40,7 @@ struct TimerListView: View {
         })
         .background(Colors.primaryBg.itm)
         .fullScreenCover(isPresented: $isShowCreateTimer, content: {
-            TimerView()
+            coordinator.createTimerView()
         })
         .fullScreenCover(isPresented: $isShowLoginView, content: {
             coordinator.createLoginView()
@@ -97,7 +97,8 @@ struct TimerListView: View {
     
     private func createCell(model: TeaModel) -> some View {
         Button(action: {
-            
+            coordinator.setTeaData(model: model)
+            isShowCreateTimer = true
         }, label: {
             HStack(alignment: .center, content: {
                 VStack(alignment: .leading, spacing: 8, content: {

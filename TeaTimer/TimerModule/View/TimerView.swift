@@ -21,11 +21,14 @@ enum Direction {
 
 struct TimerView: View {
     
-    @StateObject var viewModel = TimerViewModel()
+    @StateObject var viewModel: TimerViewModel 
     
     @State var state: StateTimerView = .timeIsUp
     @State var isShowNoteView = false
     @State var isShowDetailView = false
+    
+    let coordinator: any AppCoordinator
+    
     
     var body: some View {
        content
@@ -40,7 +43,7 @@ struct TimerView: View {
             VStack(spacing: 12, content: {
                 titleContainer
                 
-                Characteristics()
+                Characteristics(models: [])
             })
            
             switch state {
@@ -56,14 +59,14 @@ struct TimerView: View {
             .ignoresSafeArea(.all)
         )
         .sheet(isPresented: $isShowDetailView, content: {
-            TeaInfoView()
+            coordinator.createTeaInfoView()
                 .presentationDetents([.large, .medium])
         })
     }
     
     private var titleContainer: some View {
         HStack {
-            Text("Зеленый")
+            Text(viewModel.model?.cName ?? "")
                 .font(.custom(Fonts.title.itm,
                               size: 34))
                 .foregroundStyle(Colors.primaryTxt.itm)
@@ -229,7 +232,15 @@ struct TimerView: View {
 }
 
 #Preview {
-    TimerView()
+    TimerView(viewModel: TimerViewModel(model: TeaModel(id: "", 
+                                                        cName: "Зеленый чай",
+                                                        minBrewTime: 600,
+                                                        maxBrewTime: 5400,
+                                                        brewingTemperature: 80,
+                                                        numbersOfBrews: 2,
+                                                        description: "",
+                                                        image: "")),
+              coordinator: Coordinator())
 }
 
 

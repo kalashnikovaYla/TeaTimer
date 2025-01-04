@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct TeaInfoView: View {
+    
+    let model: TeaModel?
+    
     var body: some View {
         content
     }
@@ -36,7 +39,7 @@ struct TeaInfoView: View {
                 .background(Colors.iconBtn.itm)
                 .cornerRadius(20)
             
-            Text("Зелёные чаи требуют бережного обращения с водой. Слишком горячая вода может сделать чай горьким. Обычно первые проливы делают короткими (около 30 секунд), затем можно увеличивать время настаивания.")
+            Text(model?.description ?? "")
                 .foregroundStyle(Colors.secondaryTxt.itm)
                 .font(.custom(Fonts.primary.itm,
                               size: 17))
@@ -47,16 +50,23 @@ struct TeaInfoView: View {
     private var topContainer: some View {
         VStack(alignment: .leading, spacing: 8, content: {
              
-            Text("Зелёный")
+            Text(model?.cName ?? "")
                 .font(.custom(Fonts.title.itm,
                               size: 24))
                 .foregroundStyle(Colors.primaryTxt.itm)
             
-            Characteristics()
+            Characteristics(models: [])
         })
     }
 }
 
 #Preview {
-    TeaInfoView()
+    TeaInfoView(model: TeaModel(id: "",
+                                cName: "Зеленый чай",
+                                minBrewTime: 600,
+                                maxBrewTime: 5400,
+                                brewingTemperature: 80,
+                                numbersOfBrews: 2,
+                                description: "",
+                                image: ""))
 }

@@ -11,6 +11,8 @@ protocol AppCoordinator: ObservableObject {
     func createLoginView() -> LoginView
     func createRegView() -> RegistrationView
     func createProfileView() -> ProfileView
+    func createTimerView() -> TimerView
+    func createTeaInfoView() -> TeaInfoView
     func setUser(model: AuthModel) async
 }
 
@@ -19,6 +21,9 @@ final class Coordinator: AppCoordinator, ObservableObject {
     private let authManager: AuthManagerProtocol
     private let profileManager: ProfileManagerProtocol
     private let dbManager: DBManager
+    
+    var selectedTea: TeaModel?
+    
     
     @Published var authState = AuthState.notAuthenticated
     
@@ -48,6 +53,19 @@ final class Coordinator: AppCoordinator, ObservableObject {
         authState = .authenticated
         let user = DBUser(auth: model)
         try? await profileManager.createNewUser(user: user)
+    }
+    
+    func setTeaData(model: TeaModel) {
+        self.selectedTea = model
+    }
+    
+    func createTimerView() -> TimerView {
+        let vm = TimerViewModel(model: selectedTea)
+        return TimerView(viewModel: vm, coordinator: self)
+    }
+    
+    func createTeaInfoView() -> TeaInfoView {
+        return TeaInfoView(model: selectedTea)
     }
 }
 
