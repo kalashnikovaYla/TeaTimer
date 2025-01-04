@@ -29,7 +29,6 @@ struct Characteristics: View {
             .stroke(Colors.primaryBorder.itm,
                     lineWidth: 1)
         )
-        .padding(.horizontal)
     }
     
     private func createCell(model: CharacteristicsModel) -> some View {
@@ -37,7 +36,7 @@ struct Characteristics: View {
             if let image = model.image {
                 Image(image)
                     .resizable()
-                    . frame(width: 24, height: 24)
+                    .frame(width: 24, height: 24)
             }
            
             if let title = model.title {
@@ -54,5 +53,6 @@ struct Characteristics: View {
 
 
 #Preview {
-    Characteristics(models: [])
+    Characteristics(models: [CharacteristicsModel(title: "80 C",
+                                                  image: "temper")])
 }

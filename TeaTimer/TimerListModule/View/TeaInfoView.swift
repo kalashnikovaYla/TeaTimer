@@ -2,14 +2,18 @@
 //  TeaInfoView.swift
 //  TeaTimer
 //
-//  Created by Юлия Калашникова on 01.12.2024.
+//  Created by Юлия Калашникова on 04.01.2025.
 //
 
+import Foundation
 import SwiftUI
 
 struct TeaInfoView: View {
     
     let model: TeaModel?
+    let coordinator: any AppCoordinator
+    
+    @Environment(\.presentationMode) var presentationMode
     
     var body: some View {
         content
@@ -17,11 +21,17 @@ struct TeaInfoView: View {
     
     private var content: some View {
         VStack(alignment: .leading, spacing: 0, content: {
-             
-            descriptionContainer
-             
-            PrimaryButton(type: .fill,
-                          title: "Close"~)
+            ScrollView {
+                descriptionContainer
+                 
+                Button(action: {
+                    presentationMode.wrappedValue.dismiss()
+                }, label: {
+                    PrimaryButton(type: .fill,
+                                  title: "Close"~)
+                })
+            }
+           
         })
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Colors.primaryBg.itm
@@ -33,16 +43,22 @@ struct TeaInfoView: View {
         VStack(alignment: .leading, spacing: 16, content: {
             topContainer
             
-            Image("")
-                .resizable()
-                .scaledToFit()
-                .background(Colors.iconBtn.itm)
-                .cornerRadius(20)
+            let width = UIScreen.main.bounds.width - 40
             
-            Text(model?.description ?? "")
-                .foregroundStyle(Colors.secondaryTxt.itm)
-                .font(.custom(Fonts.primary.itm,
-                              size: 17))
+            if let strUrl = model?.image, let url = URL(string: strUrl) {
+                AsyncImage(url: url)
+                    .frame(width: width, height: width)
+                    .cornerRadius(20)
+                    .scaledToFit()
+            }
+    
+            
+                Text(model?.description ?? "")
+                    .foregroundStyle(Colors.secondaryTxt.itm)
+                    .font(.custom(Fonts.primary.itm,
+                                  size: 17))
+                    .padding(.vertical)
+           
         })
         .padding(.all)
     }
@@ -55,7 +71,7 @@ struct TeaInfoView: View {
                               size: 24))
                 .foregroundStyle(Colors.primaryTxt.itm)
             
-            Characteristics(models: [])
+            Characteristics(models: coordinator.createCharacteristics())
         })
     }
 }
@@ -68,5 +84,6 @@ struct TeaInfoView: View {
                                 brewingTemperature: 80,
                                 numbersOfBrews: 2,
                                 description: "",
-                                image: ""))
+                                image: ""),
+                coordinator: Coordinator())
 }

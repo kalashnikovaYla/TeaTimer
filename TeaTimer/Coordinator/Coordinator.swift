@@ -13,6 +13,7 @@ protocol AppCoordinator: ObservableObject {
     func createProfileView() -> ProfileView
     func createTimerView() -> TimerView
     func createTeaInfoView() -> TeaInfoView
+    func createCharacteristics() -> [CharacteristicsModel]
     func setUser(model: AuthModel) async
 }
 
@@ -65,7 +66,29 @@ final class Coordinator: AppCoordinator, ObservableObject {
     }
     
     func createTeaInfoView() -> TeaInfoView {
-        return TeaInfoView(model: selectedTea)
+        return TeaInfoView(model: selectedTea, 
+                           coordinator: self)
+    }
+    
+    func createCharacteristics() -> [CharacteristicsModel] {
+        var characteristics: [CharacteristicsModel] = []
+        
+        if let brewingTemperature = selectedTea?.brewingTemperature {
+            characteristics.append(CharacteristicsModel(title: "\(brewingTemperature) °C",
+                                                        image: "temper"))
+        }
+        
+        if let maxBrewTime = selectedTea?.maxBrewTime, maxBrewTime/60 > 0 {
+            let min = "min"~
+            characteristics.append(CharacteristicsModel(title: "\(maxBrewTime/60) \(min)",
+                                                        image: "time"))
+        }
+        
+        if let numbersOfBrews = selectedTea?.numbersOfBrews {
+            characteristics.append(CharacteristicsModel(title: "\(numbersOfBrews) times"~,
+                                                        image: "refresh"))
+        }
+        return characteristics
     }
 }
 

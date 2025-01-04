@@ -43,7 +43,8 @@ struct TimerView: View {
             VStack(spacing: 12, content: {
                 titleContainer
                 
-                Characteristics(models: [])
+                Characteristics(models: coordinator.createCharacteristics())
+                    .padding(.horizontal)
             })
            
             switch state {
@@ -60,7 +61,7 @@ struct TimerView: View {
         )
         .sheet(isPresented: $isShowDetailView, content: {
             coordinator.createTeaInfoView()
-                .presentationDetents([.large, .medium])
+                .presentationDetents([.large])
         })
     }
     
