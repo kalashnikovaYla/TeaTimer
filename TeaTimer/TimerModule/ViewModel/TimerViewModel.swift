@@ -16,10 +16,10 @@ final class TimerViewModel: ObservableObject {
     
     @Published var totalSeconds = 0
     @Published var progress: CGFloat = 1
-    @Published var timerStringValue = "00:00"
+    @Published var timerStringValue = ""
     @Published var seconds = 0
     @Published var isStarted = false
-
+    
     @Published var staticTotalSeconds: Int = 0
     
     @Published var state: StateTimerView = .setTimer
@@ -36,7 +36,7 @@ final class TimerViewModel: ObservableObject {
     }
     
     func startTimer() {
-         
+        
         withAnimation(.easeInOut(duration: 0.25)) {
             isStarted = true
         }
@@ -46,7 +46,9 @@ final class TimerViewModel: ObservableObject {
         staticTotalSeconds = totalSeconds
     }
     
-    func stopTimer() {
+    func resetTimer() {
+        state = .setTimer
+        
         withAnimation {
             isStarted = false
             seconds = 0
@@ -54,7 +56,7 @@ final class TimerViewModel: ObservableObject {
         }
         totalSeconds = 0
         staticTotalSeconds = 0
-        timerStringValue = "00:00"
+        timerStringValue = formatTimerString(totalSeconds: 0)
     }
     
     func updateTimer() {
@@ -64,7 +66,7 @@ final class TimerViewModel: ObservableObject {
         let hour = totalSeconds / 3600
         let minute = (totalSeconds/60)%60
         seconds = totalSeconds % 60
-        timerStringValue = "\(hour):\(minute):\(seconds)"
+        timerStringValue = formatTimerString(totalSeconds: totalSeconds)
         
         if hour == 0 && minute == 0 && seconds == 0 {
             isStarted = false
@@ -72,12 +74,64 @@ final class TimerViewModel: ObservableObject {
     }
     
     func beginButtonWasTapped() {
-        totalSeconds = 600
-        staticTotalSeconds = 600 
+        totalSeconds = getTotalSeconds()
+        timerStringValue = formatTimerString(totalSeconds: totalSeconds)
+        staticTotalSeconds = 600
         isStarted = true
         state = .countdown
         
     }
     
+    func getTotalSeconds() -> Int {
+        let totalSeconds = (selectedHour * 3600) + (selectedMinute * 60)
+        return totalSeconds
+    }
     
+    func stopTimer() {
+        isStarted = false
+    }
+    
+    func resumeTime() {
+        isStarted = true
+    }
+    
+    func formatTimerString(totalSeconds: Int) -> String {
+        let hours = totalSeconds / 3600
+        let minutes = (totalSeconds % 3600) / 60
+        let seconds = totalSeconds % 60
+        
+        if hours > 0 {
+            return String(format: "%02d:%02d:%02d", hours, minutes, seconds)
+        } else {
+            return String(format: "%02d:%02d", minutes, seconds)
+        }
+    }
+    
+    func addMinutes() {
+        selectedMinute += 5
+         
+        if selectedMinute >= 60 {
+            selectedHour += selectedMinute / 60
+            selectedMinute %= 60
+            
+            if selectedHour >= 24 {
+                selectedHour %= 24
+            }
+        }
+        totalSeconds = getTotalSeconds()
+    }
+    
+    func subtractMinutes() {
+        selectedMinute -= 5
+        
+        if selectedMinute < 0 {
+            selectedHour -= 1
+            selectedMinute += 60
+             
+            if selectedHour < 0 {
+                selectedHour = 23
+            }
+        }
+        totalSeconds = getTotalSeconds()
+    }
 }

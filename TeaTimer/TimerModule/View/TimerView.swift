@@ -163,9 +163,9 @@ struct TimerView: View {
     private var directionButtonSection: some View {
         HStack(spacing: 12) {
             Button(action: {
-                
+                viewModel.subtractMinutes()
             }, label: {
-                CustomButton(title: "– 10 sec",
+                CustomButton(title: "–5 min",
                              height: 58,
                              color: Colors.primaryBg.itm,
                              strokeColor: Colors.primaryBorder.itm,
@@ -177,9 +177,9 @@ struct TimerView: View {
             })
             
             Button(action: {
-                
+                viewModel.addMinutes()
             }, label: {
-                CustomButton(title: "+ 10 sec",
+                CustomButton(title: "+5 min",
                              height: 58,
                              color: Colors.primaryBg.itm,
                              strokeColor: Colors.primaryBorder.itm,
@@ -201,7 +201,7 @@ struct TimerView: View {
     private var countdownButtonSection: some View {
         HStack(spacing: 12, content: {
             Button(action: {
-                
+                viewModel.resetTimer()
             }, label: {
                 CustomButton(title: "Reset"~,
                              height: 58,
@@ -215,10 +215,14 @@ struct TimerView: View {
             })
             
             Button(action: {
-                
+                if viewModel.isStarted {
+                    viewModel.stopTimer()
+                } else {
+                    viewModel.resumeTime()
+                }
             }, label: {
-                CustomButton(title: "Stop"~,
-                             height: 58, 
+                CustomButton(title: viewModel.isStarted ? "Stop"~ : "Continue"~,
+                             height: 58,
                              color: Colors.primaryBtn.itm,
                              strokeColor: Colors.primaryBorder.itm,
                              topLeftRadius: 12,
