@@ -55,8 +55,6 @@ struct CircularTimer: View {
                                 .animation(.none, value: vm.progress)
                             
                         }
-                       
-                            
                     }
                     .padding()
                     .frame(height: proxy.size.width)

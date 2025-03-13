@@ -56,7 +56,6 @@
 		6B9C04282CF8380600777DE7 /* TeaTimerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B9C04272CF8380600777DE7 /* TeaTimerApp.swift */; };
 		6B9C042C2CF8380800777DE7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6B9C042B2CF8380800777DE7 /* Assets.xcassets */; };
 		6B9C042F2CF8380800777DE7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6B9C042E2CF8380800777DE7 /* Preview Assets.xcassets */; };
-		6B9C04392CF8380800777DE7 /* TeaTimerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B9C04382CF8380800777DE7 /* TeaTimerTests.swift */; };
 		6B9C04432CF8380800777DE7 /* TeaTimerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B9C04422CF8380800777DE7 /* TeaTimerUITests.swift */; };
 		6B9C04452CF8380800777DE7 /* TeaTimerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B9C04442CF8380800777DE7 /* TeaTimerUITestsLaunchTests.swift */; };
 		6BA0CA5E2D296E29003D0225 /* CharacteristicsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA0CA5D2D296E29003D0225 /* CharacteristicsModel.swift */; };
@@ -97,6 +96,12 @@
 		6BDE8A942D29A26F0072D262 /* BrewTimeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BDE8A932D29A26F0072D262 /* BrewTimeModel.swift */; };
 		6BE0F14E2D04A16D005AA7E3 /* SourceSansPro-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6BE0F14D2D04A16D005AA7E3 /* SourceSansPro-SemiBold.ttf */; };
 		6BFC08192D28347F00BC792F /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BFC08182D28347F00BC792F /* Coordinator.swift */; };
+		CE9D31492D82CAAE00414DBD /* XCTimerFormatterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9D31482D82CAAE00414DBD /* XCTimerFormatterTests.swift */; };
+		CE9D314B2D82D0EF00414DBD /* XCTotalSecondsCalulateTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9D314A2D82D0EF00414DBD /* XCTotalSecondsCalulateTest.swift */; };
+		CE9D314D2D82D8B500414DBD /* XCProgressCircleTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9D314C2D82D8B500414DBD /* XCProgressCircleTest.swift */; };
+		CE9D314F2D82DC4500414DBD /* XCTimeAdjustmentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9D314E2D82DC4500414DBD /* XCTimeAdjustmentTests.swift */; };
+		CE9D31512D82DE4800414DBD /* XCTimerViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9D31502D82DE4800414DBD /* XCTimerViewModelTests.swift */; };
+		CE9D31532D82E50E00414DBD /* XCCheckTimerCanStartTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9D31522D82E50E00414DBD /* XCCheckTimerCanStartTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -145,7 +150,6 @@
 		6B9C042B2CF8380800777DE7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6B9C042E2CF8380800777DE7 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		6B9C04342CF8380800777DE7 /* TeaTimerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TeaTimerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		6B9C04382CF8380800777DE7 /* TeaTimerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeaTimerTests.swift; sourceTree = "<group>"; };
 		6B9C043E2CF8380800777DE7 /* TeaTimerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TeaTimerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B9C04422CF8380800777DE7 /* TeaTimerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeaTimerUITests.swift; sourceTree = "<group>"; };
 		6B9C04442CF8380800777DE7 /* TeaTimerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeaTimerUITestsLaunchTests.swift; sourceTree = "<group>"; };
@@ -182,6 +186,12 @@
 		6BDE8A932D29A26F0072D262 /* BrewTimeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrewTimeModel.swift; sourceTree = "<group>"; };
 		6BE0F14D2D04A16D005AA7E3 /* SourceSansPro-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-SemiBold.ttf"; sourceTree = "<group>"; };
 		6BFC08182D28347F00BC792F /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		CE9D31482D82CAAE00414DBD /* XCTimerFormatterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XCTimerFormatterTests.swift; sourceTree = "<group>"; };
+		CE9D314A2D82D0EF00414DBD /* XCTotalSecondsCalulateTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XCTotalSecondsCalulateTest.swift; sourceTree = "<group>"; };
+		CE9D314C2D82D8B500414DBD /* XCProgressCircleTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XCProgressCircleTest.swift; sourceTree = "<group>"; };
+		CE9D314E2D82DC4500414DBD /* XCTimeAdjustmentTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XCTimeAdjustmentTests.swift; sourceTree = "<group>"; };
+		CE9D31502D82DE4800414DBD /* XCTimerViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XCTimerViewModelTests.swift; sourceTree = "<group>"; };
+		CE9D31522D82E50E00414DBD /* XCCheckTimerCanStartTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XCCheckTimerCanStartTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -444,7 +454,7 @@
 		6B9C04372CF8380800777DE7 /* TeaTimerTests */ = {
 			isa = PBXGroup;
 			children = (
-				6B9C04382CF8380800777DE7 /* TeaTimerTests.swift */,
+				CE9D31452D82C07200414DBD /* XCTestTimerModule */,
 			);
 			path = TeaTimerTests;
 			sourceTree = "<group>";
@@ -725,6 +735,19 @@
 			path = Coordinator;
 			sourceTree = "<group>";
 		};
+		CE9D31452D82C07200414DBD /* XCTestTimerModule */ = {
+			isa = PBXGroup;
+			children = (
+				CE9D31482D82CAAE00414DBD /* XCTimerFormatterTests.swift */,
+				CE9D314A2D82D0EF00414DBD /* XCTotalSecondsCalulateTest.swift */,
+				CE9D314C2D82D8B500414DBD /* XCProgressCircleTest.swift */,
+				CE9D314E2D82DC4500414DBD /* XCTimeAdjustmentTests.swift */,
+				CE9D31522D82E50E00414DBD /* XCCheckTimerCanStartTests.swift */,
+				CE9D31502D82DE4800414DBD /* XCTimerViewModelTests.swift */,
+			);
+			path = XCTestTimerModule;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -937,15 +960,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE9D314B2D82D0EF00414DBD /* XCTotalSecondsCalulateTest.swift in Sources */,
 				6B10A5632CF86FC200F15346 /* LoadView.swift in Sources */,
-				6B9C04392CF8380800777DE7 /* TeaTimerTests.swift in Sources */,
+				CE9D314F2D82DC4500414DBD /* XCTimeAdjustmentTests.swift in Sources */,
 				6B10A57B2CF8757900F15346 /* RoundedCorner.swift in Sources */,
+				CE9D314D2D82D8B500414DBD /* XCProgressCircleTest.swift in Sources */,
 				6B10A5802CF8781E00F15346 /* CustomButton.swift in Sources */,
 				6B10A5682CF872F500F15346 /* HeightModifier.swift in Sources */,
 				6B10A56C2CF8737500F15346 /* TextView.swift in Sources */,
 				6B10A55E2CF86F3700F15346 /* CommonAlert.swift in Sources */,
 				6B10A5762CF8751100F15346 /* PrimaryButton.swift in Sources */,
 				6B10A5522CF8646600F15346 /* AppColors.swift in Sources */,
+				CE9D31512D82DE4800414DBD /* XCTimerViewModelTests.swift in Sources */,
+				CE9D31492D82CAAE00414DBD /* XCTimerFormatterTests.swift in Sources */,
+				CE9D31532D82E50E00414DBD /* XCCheckTimerCanStartTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1082,6 +1110,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_NO_COMMON_BLOCKS = YES;

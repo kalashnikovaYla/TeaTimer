@@ -25,22 +25,28 @@ final class TimerViewModel: ObservableObject {
     @Published var state: StateTimerView = .setTimer
     
     let hours = Array(0...23)
-    let minutes = [0, 15, 30, 45]
+    let minutes = [0, 10, 20, 30, 40, 50]
     
     let coordinator: any AppCoordinator
     let model: TeaModel?
     
+    //MARK: Init
     init(model: TeaModel?, coordinator: any AppCoordinator) {
         self.model = model
         self.coordinator = coordinator
     }
     
+    //MARK: - Methods
+    
+    
     func startTimer() {
-        
+        if !checkTimerCanStart(hour: selectedHour, minute: selectedMinute) {
+            selectedMinute = 10
+        }
         withAnimation(.easeInOut(duration: 0.25)) {
             isStarted = true
         }
-        timerStringValue = "\(seconds)"
+        timerStringValue = formatTimerString(totalSeconds: seconds)
         
         totalSeconds = seconds
         staticTotalSeconds = totalSeconds
@@ -61,41 +67,38 @@ final class TimerViewModel: ObservableObject {
     
     func updateTimer() {
         totalSeconds -= 1
-        progress = CGFloat(totalSeconds)/CGFloat(staticTotalSeconds)
-        progress = progress < 0 ? 0 : progress
-        let hour = totalSeconds / 3600
-        let minute = (totalSeconds/60)%60
-        seconds = totalSeconds % 60
-        timerStringValue = formatTimerString(totalSeconds: totalSeconds)
-        
-        if hour == 0 && minute == 0 && seconds == 0 {
+        if totalSeconds < 0 {
             isStarted = false
+            return
         }
-    }
-    
-    func beginButtonWasTapped() {
-        totalSeconds = getTotalSeconds()
-        timerStringValue = formatTimerString(totalSeconds: totalSeconds)
-        staticTotalSeconds = 600
-        isStarted = true
-        state = .countdown
         
+        progress = setProgress(seconds: totalSeconds,
+                               totalSeconds: staticTotalSeconds)
+        
+        timerStringValue = formatTimerString(totalSeconds: totalSeconds)
     }
     
-    func getTotalSeconds() -> Int {
+    func getTotalSeconds(selectedHour: Int, selectedMinute: Int) -> Int {
         let totalSeconds = (selectedHour * 3600) + (selectedMinute * 60)
         return totalSeconds
     }
     
-    func stopTimer() {
-        isStarted = false
+    func checkTimerCanStart(hour: Int, minute: Int) -> Bool {
+        if hour == 0 && minute == 0 {
+            return false
+        }
+        return true
     }
     
-    func resumeTime() {
-        isStarted = true
+    func setProgress(seconds: Int, totalSeconds: Int) -> CGFloat {
+        let progress = CGFloat(seconds)/CGFloat(totalSeconds)
+        return (progress < 0 ? 0 : progress)
     }
     
     func formatTimerString(totalSeconds: Int) -> String {
+        if totalSeconds <= 0 {
+            return "00:00"
+        }
         let hours = totalSeconds / 3600
         let minutes = (totalSeconds % 3600) / 60
         let seconds = totalSeconds % 60
@@ -107,31 +110,45 @@ final class TimerViewModel: ObservableObject {
         }
     }
     
-    func addMinutes() {
-        selectedMinute += 5
-         
-        if selectedMinute >= 60 {
-            selectedHour += selectedMinute / 60
-            selectedMinute %= 60
-            
-            if selectedHour >= 24 {
-                selectedHour %= 24
-            }
+    func addOrSubtractSeconds(by direction: Direction, seconds: Int) -> Int {
+        let fiveMinutes = 10*60
+        var newSeconds = seconds
+        switch direction {
+        case .up:
+            newSeconds += fiveMinutes
+        case .down:
+            newSeconds -= fiveMinutes
         }
-        totalSeconds = getTotalSeconds()
+        return max(newSeconds,0)
     }
     
-    func subtractMinutes() {
-        selectedMinute -= 5
+    
+    //MARK: - Handle user action
+    func beginButtonWasTapped() {
+        totalSeconds = getTotalSeconds(selectedHour: selectedHour,
+                                       selectedMinute: selectedMinute)
+        timerStringValue = formatTimerString(totalSeconds: totalSeconds)
+        staticTotalSeconds = 600
+        isStarted = true
+        state = .countdown
         
-        if selectedMinute < 0 {
-            selectedHour -= 1
-            selectedMinute += 60
-             
-            if selectedHour < 0 {
-                selectedHour = 23
-            }
-        }
-        totalSeconds = getTotalSeconds()
+    }
+    
+    func changeMinutes(direction: Direction) {
+        isStarted = false
+        totalSeconds = addOrSubtractSeconds(by: direction, 
+                                            seconds: totalSeconds)
+
+        staticTotalSeconds = totalSeconds
+        timerStringValue = formatTimerString(totalSeconds: totalSeconds)
+        isStarted = true 
+    }
+    
+    func stopTimer() {
+        isStarted = false
+    }
+    
+    func resumeTime() {
+        isStarted = true
     }
 }

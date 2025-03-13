@@ -24,9 +24,12 @@ struct PrimaryButton: View {
     var body: some View {
         VStack {
             Text(title)
-                .font(.custom(Fonts.primary.itm,
-                              size: 20)
-                )
+                /*
+                 //TODO: ?
+                 .font(.custom(Fonts.primary.itm,
+                               size: 20)
+                 )
+                 */
                 .foregroundColor(
                     type == .fill ?
                     Colors.inversionTxt.itm: Colors.primaryBtn.itm
