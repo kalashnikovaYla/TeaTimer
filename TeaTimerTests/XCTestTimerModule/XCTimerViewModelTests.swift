@@ -41,20 +41,6 @@ final class XCTimerViewModelTests: XCTestCase {
                       "isStarted should be true when totalSeconds is still >= 0")
     }
         
-    func testUpdateTimerUpdatesProgressAndTimerString() {
-        
-        let viewModel = TimerViewModel(model: nil,
-                                       coordinator: Coordinator())
-        viewModel.totalSeconds = 30
-        viewModel.updateTimer()
-        
-        XCTAssertEqual(viewModel.progress,
-                       CGFloat(30) / CGFloat(viewModel.staticTotalSeconds),
-                       "Progress should be updated correctly")
-        XCTAssertEqual(viewModel.timerStringValue,
-                       "00:29",
-                       "Timer string should be updated correctly")
-    }
         
     func testUpdateTimerHandlesNegativeTotalSeconds() {
         

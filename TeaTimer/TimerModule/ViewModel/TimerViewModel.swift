@@ -91,6 +91,13 @@ final class TimerViewModel: ObservableObject {
     }
     
     func setProgress(seconds: Int, totalSeconds: Int) -> CGFloat {
+        guard totalSeconds > 0, seconds > 0 else {
+            return 0.0
+        }
+
+        if seconds > totalSeconds {
+            return 1.0
+        }
         let progress = CGFloat(seconds)/CGFloat(totalSeconds)
         return (progress < 0 ? 0 : progress)
     }

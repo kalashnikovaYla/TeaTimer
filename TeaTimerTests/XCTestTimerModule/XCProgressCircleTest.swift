@@ -23,7 +23,7 @@ final class XCProgressCircleTest: XCTestCase {
     func testProgressWithZeroTotalSeconds() {
         // Тестируем случай, когда totalSeconds равен 0
         let progress = timerVM.setProgress(seconds: 30, totalSeconds: 0)
-        XCTAssertEqual(progress, 0.0, accuracy: 0.001)
+        XCTAssertEqual(progress, 0.0)
     }
     
     func testProgressWithNegativeSeconds() {
@@ -47,6 +47,6 @@ final class XCProgressCircleTest: XCTestCase {
     func testProgressWithTotalSecondsLessThanSeconds() {
         // Тестируем случай, когда seconds больше totalSeconds
         let progress = timerVM.setProgress(seconds: 150, totalSeconds: 100)
-        XCTAssertEqual(progress, 1.0, accuracy: 0.001)
+        XCTAssertEqual(progress, 1.0)
     }
 }
