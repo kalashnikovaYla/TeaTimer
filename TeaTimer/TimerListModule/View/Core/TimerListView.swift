@@ -61,12 +61,14 @@ struct TimerListView: View {
                 )
                 .foregroundColor(Colors.primaryTxt.itm)
                 .frame(maxWidth: .infinity, alignment: .leading)
+                .accessibilityIdentifier("titleTimers")
             
             Button(action: {
                 isShowCreateTimer = true
             }, label: {
                 plusButton
             })
+            .accessibilityIdentifier("plus")
         })
         .frame(height: 56)
         .padding()

@@ -49,6 +49,7 @@
 		6B3CAFF22CF8F3BE0063B386 /* SourceSerif4-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6B3CAFF12CF8F3BE0063B386 /* SourceSerif4-Regular.ttf */; };
 		6B3CAFF32CF8F3BE0063B386 /* SourceSerif4-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6B3CAFF12CF8F3BE0063B386 /* SourceSerif4-Regular.ttf */; };
 		6B3CAFF42CF8F3BE0063B386 /* SourceSerif4-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6B3CAFF12CF8F3BE0063B386 /* SourceSerif4-Regular.ttf */; };
+		6B3FCC032DA2E14D00C4C6ED /* XCTimerListViewTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B3FCC022DA2E14D00C4C6ED /* XCTimerListViewTest.swift */; };
 		6B54E8352CF88D8E008BC4C4 /* LocalizeOperator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B54E8342CF88D8E008BC4C4 /* LocalizeOperator.swift */; };
 		6B54E8382CF890DD008BC4C4 /* EmailInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B54E8372CF890DD008BC4C4 /* EmailInput.swift */; };
 		6B54E83C2CF891ED008BC4C4 /* PasswordInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B54E83B2CF891ED008BC4C4 /* PasswordInput.swift */; };
@@ -141,6 +142,7 @@
 		6B3CAFEB2CF8F2070063B386 /* FontsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontsList.swift; sourceTree = "<group>"; };
 		6B3CAFED2CF8F3A30063B386 /* SourceSansPro-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-Regular.ttf"; sourceTree = "<group>"; };
 		6B3CAFF12CF8F3BE0063B386 /* SourceSerif4-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSerif4-Regular.ttf"; sourceTree = "<group>"; };
+		6B3FCC022DA2E14D00C4C6ED /* XCTimerListViewTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XCTimerListViewTest.swift; sourceTree = "<group>"; };
 		6B54E8342CF88D8E008BC4C4 /* LocalizeOperator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizeOperator.swift; sourceTree = "<group>"; };
 		6B54E8372CF890DD008BC4C4 /* EmailInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailInput.swift; sourceTree = "<group>"; };
 		6B54E83B2CF891ED008BC4C4 /* PasswordInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordInput.swift; sourceTree = "<group>"; };
@@ -386,6 +388,14 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		6B3FCBFF2DA2E10D00C4C6ED /* TimerListViewTests */ = {
+			isa = PBXGroup;
+			children = (
+				6B3FCC022DA2E14D00C4C6ED /* XCTimerListViewTest.swift */,
+			);
+			path = TimerListViewTests;
+			sourceTree = "<group>";
+		};
 		6B54E8362CF890B5008BC4C4 /* InputView */ = {
 			isa = PBXGroup;
 			children = (
@@ -462,6 +472,7 @@
 		6B9C04412CF8380800777DE7 /* TeaTimerUITests */ = {
 			isa = PBXGroup;
 			children = (
+				6B3FCBFF2DA2E10D00C4C6ED /* TimerListViewTests */,
 				6B9C04422CF8380800777DE7 /* TeaTimerUITests.swift */,
 				6B9C04442CF8380800777DE7 /* TeaTimerUITestsLaunchTests.swift */,
 			);
@@ -989,6 +1000,7 @@
 				6B10A56D2CF8737500F15346 /* TextView.swift in Sources */,
 				6B10A5812CF8781E00F15346 /* CustomButton.swift in Sources */,
 				6B10A5692CF872F500F15346 /* HeightModifier.swift in Sources */,
+				6B3FCC032DA2E14D00C4C6ED /* XCTimerListViewTest.swift in Sources */,
 				6B9C04452CF8380800777DE7 /* TeaTimerUITestsLaunchTests.swift in Sources */,
 				6B9C04432CF8380800777DE7 /* TeaTimerUITests.swift in Sources */,
 			);

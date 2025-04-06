@@ -66,6 +66,7 @@ struct TimerView: View {
             viewModel.coordinator.createTeaInfoView()
                 .presentationDetents([.large])
         })
+        .accessibilityIdentifier("CreateTimerView")
     }
     
     private var titleContainer: some View {
